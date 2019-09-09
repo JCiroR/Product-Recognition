@@ -3,6 +3,10 @@
 # Instalación
 
 - Instale NodeJS. https://nodejs.org/en/
+- Instale Angular CLI.
+
+  ```npm install -g @angular/cli@latest```
+
 - Para instalar las dependencias ejecute deste la carpeta raíz del proyecto:
 
   ```npm install```
