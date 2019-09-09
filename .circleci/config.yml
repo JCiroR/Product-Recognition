@@ -8,8 +8,8 @@ jobs:
       - checkout
       - run:
           name: config-home-folder
-          command: ''
-      - run: "npm set prefix=/home/circleci/npm && echo 'export PATH=$HOME/circleci/npm/bin:$PATH' >> /home/circleci/.bashrc"
+          command: "npm set prefix=/home/circleci/npm && echo 'export PATH=$HOME/circleci/npm/bin:$PATH' >> /home/circleci/.bashrc"
+      - run:
           name: install-angular-cli
           command: "sudo npm install -g angular-cli@latest"
       - run:
