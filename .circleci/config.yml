@@ -7,8 +7,11 @@ jobs:
     steps:
       - checkout
       - run:
+          name: config-home-folder
+          command: ''
+      - run: "npm set prefix=/home/circleci/npm && echo 'export PATH=$HOME/circleci/npm/bin:$PATH' >> /home/circleci/.bashrc"
           name: install-angular-cli
-          command: 'sudo npm install -g angular-cli@latest'
+          command: "sudo npm install -g angular-cli@latest"
       - run:
           name: install-project-dependencies
           command: npm install
