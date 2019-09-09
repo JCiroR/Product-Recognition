@@ -1,4 +1,5 @@
 # Product Recognition
+Reconocedor de productos del Laboratorio de Almacenamiento de la Universidad EAFIT, usando una Red Neuronal Convolucional.
 
 # Instalación
 

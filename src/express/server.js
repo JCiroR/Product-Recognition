@@ -4,7 +4,6 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const compression = require('compression')
 
-
 const api = require('./server/routes/api');
 
 const app = express();
