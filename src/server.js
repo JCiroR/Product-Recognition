@@ -12,7 +12,7 @@ const app = express();
 //direccion de los html y css
 console.log(__dirname + '/express/server/public');
 
-//tipo de docuemento de vistas
+//tipo de docuemento de vistas 
 app.set('view engine', 'html');
 
 
@@ -26,8 +26,9 @@ app.use(compression());
 app.use(express.static(__dirname + "/express/server/public"));
 
 //para conectar a las rutas
-require(__dirname + '/express/server/routes/routes')(app);
-require(__dirname + '/express/server/routes/api')(app);
+require('./express/server/routes/routes')(app);
+require('./express/server/routes/api')(app);
+
 
 ////////////////////////////////////////////////////
 ///////////////////CONFIGURACION////////////////////

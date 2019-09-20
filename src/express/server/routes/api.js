@@ -1,12 +1,19 @@
 var tensorflow = require('../tensorflow/tensorflow.js');
 
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////DOCUMENTOS//////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
 const multer = require("multer");
 var fs = require('fs');
 const path = require('path');
 
 var upload = multer({ storage: multer.diskStorage({
 
-    destination: "./uploaded/files",
+    destination: "/uploaded/files",
 
     filename: function (req, file, cb) {
       var ext = require('path').extname(file.originalname);
@@ -36,4 +43,5 @@ module.exports = (app) => {
 		console.log(tempPath);
 		tensorflow.init(tempPath, res);
 	});
+
 };
