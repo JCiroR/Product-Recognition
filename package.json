@@ -1,0 +1,38 @@
+{
+  "name": "warehouseing",
+  "version": "1.0.0",
+  "description": "Aplicacion de gestion de almacenamiento de productos en almacen",
+  "author": "apatin14@eafit.edu.co",
+  "url": "",
+  "copyright": "Copyright 2019 Eafit",
+  "license": "Personal",
+  "main": "main.js",
+  "scripts": {
+    "server": "node ./src/server.js",
+    "angular": "ng serve --proxy-config express/angularproxy.conf.json",
+    "start": "npm run server && npm run angular",
+    "dist": "build"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^1.2.8",
+    "@tensorflow/tfjs-node": "^1.2.8",
+    "@tensorflow/tfjs-node-gpu": "^1.2.8",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^3.4.1",
+    "canvas": "^2.6.0",
+    "canvas-prebuilt": "^2.0.0-alpha.14",
+    "compression": "^1.7.3",
+    "cookie-parser": "^1.4.4",
+    "crypto": "^1.0.1",
+    "csvtojson": "^2.0.10",
+    "express": "^4.16.4",
+    "http": "0.0.0",
+    "image-js": "^0.21.7",
+    "mime": "^2.4.4",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "node-etl": "^1.0.3",
+    "typescript": "^3.6.2"
+  }
+}
