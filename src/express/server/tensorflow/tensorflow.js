@@ -3,6 +3,9 @@ var fs = require('fs');
 var csv = require("csvtojson");
 var ETL=require('node-etl');
 
+const jsonString = fs.readFileSync('./src/express/data/csv/id_to_ref.json');
+const data = JSON.parse(jsonString);
+
 
 module.exports = {
 
@@ -13,12 +16,18 @@ module.exports = {
                 const prediction = pretrainedModel.predict(processedImage);
                 var predicted_idx = prediction.argMax(1).dataSync()[0];
 
-                console.log(predicted_idx);
+                csvToJson('./src/express/data/csv/Maestro de Inventario 2019-2 (2).csv');
 
+                var promise = null;
+                for (key in data){
+                    if(data[key]["prediction"]==predicted_idx){
+                        //console.log(data[key]["ref"]);
+                        promise = data[key]["ref"];
+                    }
+                }
 
-                var inventario = csvToJson('./src/express/data/csv/Maestro de Inventario 2019-2 (2).csv');
-
-                console.log(inventario);
+                res.write(JSON.stringify(promise));
+                res.end();
 
                 //para hacer le find con predicted_idx
             
@@ -65,15 +74,33 @@ function csvToJson(csv) {
             output[key]["Cantidad 2019"] = parseInt(output[key]["Cantidad 2019"]);
         }
     }
+
+    JsonJoin(output);
     return output;
 }
 
 
-function JsonJoin(inventario, ids){
-    for(var key in inventario){
-        if (inventario[key]['Artículo correspondiente en la base de datos'] == ids.find(inventario[key]['Artículo correspondiente en la base de datos'])){
-            ids.find(inventario[key]['Artículo correspondiente en la base de datos']) = parseInt(inventario[key]);
+
+function JsonJoin(inventario) {
+    try {
+        for(var key in inventario){
+            if(inventario[key]['Artículo correspondiente en la base de datos']){
+                getIds(inventario[key]);
+            }
+        } 
+    } catch(err) {
+        console.log(err)
+        return
+    }      
+}
+
+
+function getIds(item) {
+    for (key in data){
+        if(data[key]["ref"] == item['Artículo correspondiente en la base de datos']){
+            data[key]["ref"] = item;
         }
     }
-
 }
+
+
