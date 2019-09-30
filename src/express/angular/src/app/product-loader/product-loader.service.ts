@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Http } from '@angular/http';
+import { map } from 'rxjs/operators';
 
 import { baseUrl } from '../base-url';
 
@@ -14,10 +15,9 @@ export class ProductLoaderService {
     ) {}
 
     sendImage(image) {
-        console.log(image.get('image'));
-        return this.http.post(baseUrl + '/image', image)
-            .subscribe(res => {
-                console.log(res);
-            });
+        var res = this.http.post(baseUrl + '/image', image)
+            .pipe(map(data => data.json())).toPromise();
+        console.log(res);
+        return res;
     }
 }
