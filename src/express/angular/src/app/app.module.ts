@@ -3,13 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InputUserDataFormComponent } from './input-user-data-form/input-user-data-form.component';
 import { ProductLoaderComponent } from './product-loader/product-loader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InputUserDataFormComponent,
     ProductLoaderComponent
   ],
   imports: [

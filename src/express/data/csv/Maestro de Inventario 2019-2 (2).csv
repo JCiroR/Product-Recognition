@@ -1,0 +1,387 @@
+﻿Posicion;id;Descripción;Cantidad
+A - C1 - N1;315077016;Pitillo rosado;90
+A - C1 - N2;127082707;Triángulo verde plano;181
+A - C1 - N3;340311077;Rectángulo 16 puntos azul / morado - Porta ejes negro redondo;117
+A - C1 - N4;310302700;Rectángulo 16 puntos rojo - Rectángulo 8 puntos morado;106
+A - C1 - N5;304600205;Llantas negras;193
+A - C1 - N6;310080818;Pelota ping pong amarilla;89
+A - C1 - N7;127082718;Tapa amarilla;95
+A - C1 - N8;310010087;Rectángulo 16 puntos amarillo - Rines rojos;120
+A - C2 - N1;310080821;Rectángulo 16 puntos verde - Triángulo negro;119
+A - C2 - N2;127082708;Triángulo fucsia plano;180
+A - C2 - N3;318900004;Rectángulo 2 puntos gris - Rectángulo 8 puntos morado;110
+A - C2 - N4;318900007;Rectángulo 8 puntos amarillo - Rines rojos;110
+A - C2 - N5;127082730;Pinza amarilla;102
+A - C2 - N6;310012011;Rectángulo 8 puntos morado;120
+A - C2 - N7;304600011;Pelotas ping pong azul;64
+A - C2 - N8;310082500;Porta ejes negro redondo - Rectángulo 8 puntos gris;106
+A - C3 - N1;303390111;Pelota ping pong morado;107
+A - C3 - N2;127082709;Rectángulo 16 puntos aguamarina;115
+A - C3 - N3;333390434;Rectángulo 16 puntos verde - Rectángulo 8 puntos amarillo;119
+A - C3 - N4;360750006;Rectángulo 16 puntos rojo - Rectángulo 8 puntos gris;80
+A - C3 - N5;304600207;Rectángulo 8 puntos rojo;91
+A - C3 - N6;340300613;Rectángulo 8 puntos amarillo - Porta ejes negro cuadrado;96
+A - C3 - N7;310096407;Rectángulo 8 puntos amarillo;96
+A - C3 - N8;310084500;Rectángulo 8 puntos gris - Triángulo negro;112
+A - C4 - N1;305660053;Rectángulo 8 puntos amarillo - Triángulo negro;118
+A - C4 - N2;127082710;Rectángulo 16 puntos azul - Rectángulo 8 puntos azul;86
+A - C4 - N3;310015020;Llantas negras - Rines verde;103
+A - C4 - N4;127082716;Pinza azul / morado;92
+A - C4 - N5;310099993;Rines rojos;100
+A - C4 - N6;310092017;Triángulo amarillo plano;178
+A - C4 - N7;310720007;Triángulo rojo plano;176
+A - C4 - N8;310096313;Tope azul;88
+A - C5 - N1;303420024;Vaquero variado naranjado;89
+A - C5 - N2;127082711;Tope fucsia;98
+A - C5 - N3;333390431;Carenaje rojo - Porta ejes negro cuadrado;89
+A - C5 - N4;127082731;Tapa roja ;93
+A - C5 - N5;304600130;Rectángulo 16 puntos azul / morado - Porta ejes negro cuadrado;97
+A - C5 - N6;303421050;Rectángulo 8 puntos amarillo - Rectángulo 2 puntos gris;91
+A - C5 - N7;340311012;Triángulo morado plano;180
+A - C5 - N8;310010089;Rectángulo 8 puntos gris - Rectángulo 2 puntos morado;110
+A - C6 - N1;310092015;Rectángulo 8 puntos azul - Rectángulo 2 puntos morado;111
+A - C6 - N2;127082712;Hélice fucsia;101
+A - C6 - N3;315077019;Rectángulo 16 puntos azul / morado - Rectángulo 8 puntos verde;89
+A - C6 - N4;310093218;Trapecio pequeño negro;119
+A - C6 - N5;127082735;Tapa negra ;90
+A - C6 - N6;318900001;Triángulo blanco plano;180
+A - C6 - N7;315077021;Triángulo negro plano;164
+A - C6 - N8;310010088;Rines rojos - Triángulo negro;108
+A - C7 - N1;310099997;Rectángulo 8 puntos azul - Rectángulo 8 puntos gris;90
+A - C7 - N2;127082713;Rectángulo 16 puntos verde - Rectángulo 2 puntos gris;88
+A - C7 - N3;310080808;Trapecio pequeño fucsia;121
+A - C7 - N4;304600012;Rectángulo 16 puntos rojo - Rectángulo 4 puntos rojo;83
+A - C7 - N5;304600120;Rectángulo 8 puntos morado - Rines rojos;121
+A - C7 - N6;304600030;Rectángulo 16 puntos azul / morado - Rectángulo 16 puntos rojo;67
+A - C7 - N7;127082728;Portavasos verde;72
+A - C7 - N8;310080800;Rectángulo 8 puntos verde - Rectángulo 2 puntos gris;68
+A - C8 - N1;304600035;Rectángulo 8 puntos azul - Rectángulo 8 puntos amarillo;109
+A - C8 - N2;127082745;Tapa azul / morado;96
+A - C8 - N3;310094027;Rectángulo 16 puntos azul / morado - Rectángulo 8 puntos gris;87
+A - C8 - N4;310092019;Vaquero variado verde;106
+A - C8 - N5;333390433;Rectángulo 8 puntos amarillo - Rectángulo 8 puntos morado;120
+A - C8 - N6;303540063;Rectángulo 8 puntos gris - Rines rojos;92
+A - C8 - N7;300005087;Rectángulo 8 puntos gris - Porta ejes negro cuadrado;96
+A - C8 - N8;315043126;Rectángulo 8 puntos amarillo - Plana verde;103
+B - C1 - N1;300005055;Rectángulo 8 puntos azul - Rectángulo 2 puntos negro;90
+B - C1 - N2;127082715;Pinza negra ;92
+B - C1 - N3;310094038;Vara Fucsia;100
+B - C1 - N4;110150-S04;Rines rojos - Rectángulo 2 puntos negro;121
+B - C1 - N5;303540064;Rectángulo 4 puntos azul;91
+B - C1 - N6;310093215;Carenaje rojo - Rectángulo 8 puntos morado;89
+B - C1 - N7;304600208;Rectángulo 16 puntos amarillo;97
+B - C1 - N8;310096410;Rectángulo 8 puntos morado - Rectángulo 4 puntos gris;120
+B - C2 - N1;305660051;Rectángulo 8 puntos azul - Rectángulo 16 puntos verde;121
+B - C2 - N2;127082716;Pinza azul / morado;84
+B - C2 - N3;310080814;Hélice  Verde;100
+B - C2 - N4;340311036;Rectángulo 16 puntos rojo - Rectángulo 8 puntos azul;90
+B - C2 - N5;340311001;Soporte blanco ;150
+B - C2 - N6;340311027;Porta ejes negro cuadrado - Plana verde;116
+B - C2 - N7;304600015;Rectángulo 8 puntos gris - Rectángulo 4 puntos gris;91
+B - C2 - N8;310096409;Rectángulo 16 puntos azul - Rectángulo 8 puntos amarillo;92
+B - C3 - N1;303420136;Vaquero variado azul;105
+B - C3 - N2;127082717;Probeta hueso amarilla;79
+B - C3 - N3;310094033;Rectángulo 16 puntos verde - Rectángulo 8 puntos gris;92
+B - C3 - N4;303420025;Rectángulo 8 puntos gris - Plana roja;105
+B - C3 - N5;340311034;Medias llantas;201
+B - C3 - N6;360750100;Trapecio mediano amarillo;113
+B - C3 - N7;340300605;Trapecio mediano negro;121
+B - C3 - N8;304600036;Rectángulo 8 puntos gris - Triángulo azul;93
+B - C4 - N1;127082718;Tapa amarilla;92
+B - C4 - N2;310081238;Rectángulo 8 puntos azul - Porta ejes negro redondo;79
+B - C4 - N3;310093240;Vara naranjada;100
+B - C4 - N4;305660055;Rectángulo 16 puntos rojo - Rectángulo 2 puntos gris;87
+B - C4 - N5;304600010;Porta ejes negro redondo;100
+B - C4 - N6;315077021;Triángulo negro plano;181
+B - C4 - N7;310302206;Rectángulo 8 puntos amarillo - Rectángulo 2 puntos morado;104
+B - C4 - N8;0311060SS2;Rectángulo 4 puntos rojo - Rectángulo 8 puntos morado;99
+B - C5 - N1;340300700;Rectángulo 8 puntos gris - Rectángulo 4 puntos naranjado;85
+B - C5 - N2;127082719;Pinza fucsia ;83
+B - C5 - N3;310093242;Rectángulo 16 puntos azul - Triángulo negro;80
+B - C5 - N4;304600146;Rectángulo 16 puntos amarillo - Rectángulo 2 puntos rojo;80
+B - C5 - N5;315077011;Rectángulo 16 puntos amarillo - Rectángulo 16 puntos azul / morado;88
+B - C5 - N6;310302213;Rectángulo 8 puntos naranja;115
+B - C5 - N7;300043030;Trapecio pequeño morado;118
+B - C5 - N8;310095804;Rectángulo 8 puntos gris - Rectángulo 2 puntos rojo;79
+B - C6 - N1;340311046;Rectángulo 8 puntos azul;80
+B - C6 - N2;127082720;Pinza verde ;90
+B - C6 - N3;310093241;Rectángulo 8 puntos morado - Rectángulo 2 puntos rojo;91
+B - C6 - N4;340311020;Rectángulo 16 puntos azul / morado - Rectángulo 16 puntos verde;76
+B - C6 - N5;304600151;Pelota ping pong fucsia;70
+B - C6 - N6;304600015;Rectángulo 8 puntos gris - Rectángulo 4 puntos gris;90
+B - C6 - N7;318900002;Trapecio pequeño verde ;123
+B - C6 - N8;315077012;Trapecio mediano blanco;137
+B - C7 - N1;303480062;Trapecio mediano morado;115
+B - C7 - N2;127082721;Pinza blanca ;92
+B - C7 - N3;310080804;Rectángulo 16 puntos rojo - Porta ejes negro cuadrado;90
+B - C7 - N4;310802700;Rectángulo 16 puntos verde - Rectángulo 2 puntos morado;90
+B - C7 - N5;304600034;Rines blancos;201
+B - C7 - N6;303480061;Pelota ping pong naranjada;87
+B - C7 - N7;310012011;Rectángulo 8 puntos morado;120
+B - C7 - N8;310015020;Llantas negras - Rines verde;126
+B - C8 - N1;310081222;Rectángulo 4 puntos gris - Porta ejes negro cuadrado;90
+B - C8 - N2;310015021;Rectángulo 4 puntos azul - Rectángulo 4 puntos morado;71
+B - C8 - N3;310015015;Rectángulo 4 puntos azul - Triángulo negro;90
+B - C8 - N4;127082720;Pinza verde ;94
+B - C8 - N5;127082741;Rectángulo 8 puntos morado - Rectángulo 2 puntos negro;92
+B - C8 - N6;127082733;Pinza roja ;89
+B - C8 - N7;310093233;Rectángulo 8 puntos gris;101
+B - C8 - N8;333390432;Rectángulo 4 puntos rojo - Rectángulo 2 puntos negro;90
+C - C1 - N1;127082744;Probeta hueso roja ;78
+C - C1 - N2;310093214;Catapis amarillo;93
+C - C1 - N3;127082745;Tapa azul / morado;93
+C - C1 - N4;371302200;Rectángulo 8 puntos azul - Rectángulo 2 puntos rojo;100
+C - C1 - N5;310093233;Rectángulo 8 puntos gris;100
+C - C1 - N6;310302221;Trapecio mediano fucsia;120
+C - C1 - N7;340300613;Rectángulo 8 puntos amarillo - Porta ejes negro cuadrado;86
+C - C1 - N8;127082721;Pinza blanca ;92
+C - C2 - N1;310081231;Rectángulo 8 puntos gris - Rectángulo 4 puntos rojo;65
+C - C2 - N2;110150-S02;Gancho azul / morado;96
+C - C2 - N3;310081216;Rines rojos - Porta ejes negro redondo;90
+C - C2 - N4;304600205;Llantas negras;197
+C - C2 - N5;310720008;Rines verdes;116
+C - C2 - N6;304600135;Rectángulo 8 puntos azul - Triángulo negro;90
+C - C2 - N7;310092017;Triángulo amarillo plano;173
+C - C2 - N8;127082739;Tapa blanca ;87
+C - C3 - N1;310081228;Ficha parqués amarillo;96
+C - C3 - N2;340300608;Llantas negras - Rines blancos;103
+C - C3 - N3;310081218;Rectángulo 4 puntos azul - Rectángulo 8 puntos morado;90
+C - C3 - N4;310081225;Rectángulo 16 puntos amarillo - Rectángulo 8 puntos azul;108
+C - C3 - N5;127082731;Tapa roja ;83
+C - C3 - N6;340300605;Trapecio mediano negro;122
+C - C3 - N7;304600151;Pelota ping pong fucsia;69
+C - C3 - N8;310302220;Trapecio pequeño rojo;117
+C - C4 - N1;127082716;Pinza azul / morado;93
+C - C4 - N2;304940006;Peinilla azul;96
+C - C4 - N3;310084000;Portavasos rojo;100
+C - C4 - N4;340311026;Trapecio mediano verde;151
+C - C4 - N5;310424359;Porta bombas verde;100
+C - C4 - N6;127082719;Pinza fucsia ;97
+C - C4 - N7;3712022;Rectángulo 4 puntos negro - Rectángulo 2 puntos gris;90
+C - C4 - N8;310080807;Peinilla amarilla;96
+C - C5 - N1;310014013;Gancho de madera;100
+C - C5 - N2;315077014;Rectángulo 4 puntos morado - Rectángulo 16 puntos verde;87
+C - C5 - N3;310010077;Rectángulo 4 puntos azul - Rectángulo 8 puntos gris;98
+C - C5 - N4;303540063;Rectángulo 8 puntos gris - Rines rojos;96
+C - C5 - N5;310096406;Carenaje rojo;86
+C - C5 - N6;315077012;Trapecio mediano blanco;102
+C - C5 - N7;310080808;Trapecio pequeño fucsia;119
+C - C5 - N8;303430018;Rectángulo 16 puntos verde - Porta ejes negro redondo;71
+C - C6 - N1;303480062;Trapecio mediano morado;120
+C - C6 - N2;303420077;Rectángulo 4 puntos morado - Rectángulo 8 puntos morado;100
+C - C6 - N3;310015016;Hélice azul;100
+C - C6 - N4;303540064;Rectángulo 4 puntos azul;75
+C - C6 - N5;303480063;Vara verde;100
+C - C6 - N6;304600014;Porta ejes negro redondo - Plana verde;91
+C - C6 - N7;340311034;Medias llantas;199
+C - C6 - N8;310080812;Pitillo amarillo;90
+C - C7 - N1;310095039;Trompo fucsia;96
+C - C7 - N2;304600007;Trapecio pequeño amarillo;116
+C - C7 - N3;127082735;Tapa negra ;90
+C - C7 - N4;127082738;Probeta hueso verde ;77
+C - C7 - N5;310096408;Rectángulo 16 puntos amarillo - Rectángulo 8 puntos gris;111
+C - C7 - N6;304600016;Gancho negro;74
+C - C7 - N7;127082728;Portavasos verde;73
+C - C7 - N8;303430017;Grapadora suncho naranjado;150
+C - C8 - N1;310094035;Ping Pong blanco;105
+C - C8 - N2;127082723;Probeta hueso negra;128
+C - C8 - N3;310094039;Carenaje rojo - Rectángulo 16 puntos amarillo ;84
+C - C8 - N4;340311001;Soporte blanco ;150
+C - C8 - N5;127082761;Rectángulo 16 puntos rojo - Triángulo azul;96
+C - C8 - N6;310302207;Hélice naranjada;100
+C - C8 - N7;310302220;Trapecio pequeño rojo;117
+C - C8 - N8;305660054;Grapadora suncho gris;130
+D - C1 - N1;310094037;Pitillo verde;90
+D - C1 - N2;310092018;Gancho rosado;138
+D - C1 - N3;310095043;Porta bombas rojo;90
+D - C1 - N4;304600207;Rectángulo 8 puntos rojo;122
+D - C1 - N5;371302202;Rectángulo 16 puntos amarillo - Rectángulo 8 puntos morado;82
+D - C1 - N6;333390428;Rectángulo 4 puntos azul - Porta ejes negro redondo;83
+D - C1 - N7;303421050;Rectángulo 8 puntos amarillo - Rectángulo 2 puntos gris;89
+D - C1 - N8;310720007;Triángulo rojo plano;175
+D - C2 - N1;310094040;Trompo azul;95
+D - C2 - N2;306000027;Pitillo rojo;90
+D - C2 - N3;310080811;Clip negro;96
+D - C2 - N4;340311026;Trapecio mediano verde;87
+D - C2 - N5;310080810;Portavasos blanco;92
+D - C2 - N6;300005087;Rectángulo 8 puntos gris - Porta ejes negro cuadrado;97
+D - C2 - N7;127082733;Pinza roja ;97
+D - C2 - N8;300043030;Trapecio pequeño morado;119
+D - C3 - N1;304600147;Porta bombas rosado;90
+D - C3 - N2;127082715;Pinza negra ;91
+D - C3 - N3;304600206;Gancho verde;95
+D - C3 - N4;310099993;Rines rojos;114
+D - C3 - N5;333390429;Portavasos azul / morado;100
+D - C3 - N6;127082716;Pinza azul / morado;93
+D - C3 - N7;310302221;Trapecio mediano fucsia;113
+D - C3 - N8;127082718;Tapa amarilla ;85
+D - C4 - N1;305660049;Trompo amarillo;97
+D - C4 - N2;127082727;Probeta hueso blanca ;77
+D - C4 - N3;310084700;Tope naranjado;112
+D - C4 - N4;127082731;Tapa roja ;97
+D - C4 - N5;304600011;Pelotas ping pong azul;69
+D - C4 - N6;127082739;Tapa blanca ;101
+D - C4 - N7;310015020;Llantas negras - Rines verde;113
+D - C4 - N8;300005088;Vara perpendicular blanca ;116
+D - C5 - N1;310012010;Gancho naranjado;96
+D - C5 - N2;127082745;Tapa azul / morado;96
+D - C5 - N3;360750100;Trapecio mediano amarillo;120
+D - C5 - N4;310302206;Rectángulo 8 puntos amarillo - Rectángulo 2 puntos morado;103
+D - C5 - N5;310302213;Rectángulo 8 puntos naranja;111
+D - C5 - N6;340311012;Triángulo morado plano;179
+D - C5 - N7;304600034;Rines blancos;240
+D - C5 - N8;127082730;Pinza amarilla;124
+D - C6 - N1;310014017;Porta ejes negro redondo - Porta ejes negro cuadrado;90
+D - C6 - N2;340311007;Rectángulo 8 puntos azul - Porta ejes negro cuadrado;90
+D - C6 - N3;127082719;Pinza fucsia ;90
+D - C6 - N4;127082777;Vara perpendicular roja  ;105
+D - C6 - N5;310096407;Rectángulo 8 puntos amarillo;90
+D - C6 - N6;304600148;Rines rojos - Rectángulo 2 puntos morado;90
+D - C6 - N7;310720008;Rines verdes;150
+D - C6 - N8;127082721;Pinza blanca ;92
+D - C7 - N1;310084301;Trapecio pequeño blanco;119
+D - C7 - N2;127082750;Tapa fucsia;116
+D - C7 - N3;310302220;Trapecio pequeño rojo;115
+D - C7 - N4;304600010;Porta ejes negro redondo;100
+D - C7 - N5;310080818;Pelota ping pong amarilla;100
+D - C7 - N6;315077018;Rectángulo 8 puntos azul - Plana verde;92
+D - C7 - N7;340311011;Pelota ping pong verde;72
+D - C7 - N8;127082707;Triángulo verde plano;183
+D - C8 - N1;127082735;Tapa negra ;90
+D - C8 - N2;127082720;Pinza verde ;91
+D - C8 - N3;304600120;Rectángulo 8 puntos morado - Rines rojos;120
+D - C8 - N4;318900001;Triángulo blanco plano ;172
+D - C8 - N5;340300608;Llantas negras - Rines blancos;102
+D - C8 - N6;310082001;Rectángulo 16 puntos rojo - Rectángulo 16 puntos verde;62
+D - C8 - N7;127082722;Carenaje rojo - Rectángulo 8 puntos gris;80
+D - C8 - N8;127082708;Triángulo fucsia plano;179
+E - C1 - N1;127082750;Tapa fucsia;114
+E - C1 - N2;127082749;Catapis naranjado;86
+E - C1 - N3;127082747;Probeta hueso azul / morado;77
+E - C1 - N4;127082748;Trapecio grande negro ;120
+E - C1 - N5;127082717;Probeta hueso amarilla;73
+E - C10 - N1;127082743;Ficha parqués roja;96
+E - C10 - N2;310093218;Trapecio pequeño negro;117
+E - C10 - N3;320079013;Vara azul ;100
+E - C10 - N4;127082724;Rectángulo 8 puntos morado - Triángulo negro;90
+E - C10 - N5;127082723;Probeta hueso negra;105
+E - C2 - N1;127082746;Triángulo azul;83
+E - C2 - N2;310012012;Trompo verde;96
+E - C2 - N3;127082733;Pinza roja ;92
+E - C2 - N4;310085000;Catapis fucsia;89
+E - C2 - N5;127082744;Probeta hueso roja ;78
+E - C3 - N1;127082731;Tapa roja ;93
+E - C3 - N2;310014020;Rectángulo 16 puntos naranjado;107
+E - C3 - N3;127082745;Tapa azul / morado;97
+E - C3 - N4;310081233;Rectángulo 8 puntos morado - Porta ejes negro redondo;110
+E - C3 - N5;127082738;Probeta hueso verde ;78
+E - C4 - N1;300038007;Rectángulo 8 puntos azul - Rectángulo 2 puntos gris;100
+E - C4 - N2;300005089;Porta bombas amarillo;89
+E - C4 - N3;127082726;Peinilla rosada;94
+E - C4 - N4;127082720;Pinza verde ;93
+E - C4 - N5;320079014;Gancho menta;58
+E - C5 - N1;304600149;Tope verde;101
+E - C5 - N2;127082721;Pinza blanca ;101
+E - C5 - N3;127082742;Rectángulo 4 puntos rojo - Porta ejes negro cuadrado;90
+E - C5 - N4;318900002;Trapecio pequeño verde ;118
+E - C5 - N5;127082727;Probeta hueso blanca ;78
+E - C6 - N1;340311011;Pelota ping pong verde;62
+E - C6 - N2;127082740;Vara cruz negra ;112
+E - C6 - N3;127082739;Tapa blanca ;103
+E - C6 - N4;127082737;Rines rojos - Rectángulo 4 puntos azul;92
+E - C6 - N5;127082738;Probeta hueso verde ;77
+E - C7 - N1;127082736;Tapa verde;92
+E - C7 - N2;127082735;Tapa negra ;90
+E - C7 - N3;127082734;Probeta hueso fucsia;78
+E - C7 - N4;127082719;Pinza fucsia ;90
+E - C7 - N5;303480061;Pelota ping pong naranjada;90
+E - C8 - N1;127082733;Pinza roja ;88
+E - C8 - N2;127082718;Tapa amarilla ;153
+E - C8 - N3;310080815;Probeta hueso transparente;90
+E - C8 - N4;320078101;Rectángulo 8 puntos gris - Rectángulo 2 puntos negro ;95
+E - C8 - N5;127082729;Trapecio grande blanco ;118
+E - C9 - N1;127082725;Trapecio grande amarillo ;120
+E - C9 - N2;127082730;Pinza amarilla;91
+E - C9 - N3;127082717;Probeta hueso amarilla;80
+E - C9 - N4;310084301;Trapecio pequeño blanco;75
+E - C9 - N5;127082727;Probeta hueso blanca ;77
+F - C1 - N1;127082758;Vara perpendicular negra ;112
+F - C1 - N2;304600208;Rectángulo 16 puntos amarillo;120
+F - C1 - N3;127082734;Probeta hueso fucsia;76
+F - C1 - N4;127082765;Vara perpendicular verde ;116
+F - C1 - N5;340311037;Ficha parqués verde;97
+F - C10 - N1;127082735;Tapa negra ;88
+F - C10 - N2;310015019;Ficha parqués naranjada;90
+F - C10 - N3;310010090;Gancho amarillo;96
+F - C10 - N4;127082730;Pinza amarilla;134
+F - C10 - N5;127082750;Tapa fucsia;115
+F - C2 - N1;127082757;Trapecio grande azul / morado;119
+F - C2 - N2;127082721;Pinza blanca ;85
+F - C2 - N3;304600008;Pelota ping pong roja;123
+F - C2 - N4;127082764;Vara perpendicular fucsia;113
+F - C2 - N5;127082736;Tapa verde;65
+F - C3 - N1;127082716;Pinza azul / morado;92
+F - C3 - N2;127082739;Tapa blanca ;90
+F - C3 - N3;127082718;Tapa amarilla ;92
+F - C3 - N4;340311078;Porta ejes negro cuadrado;108
+F - C3 - N5;310080803;Ficha parqués fucsia;92
+F - C4 - N1;127082756;Trapecio grande rojo ;116
+F - C4 - N2;127082719;Pinza fucsia ;91
+F - C4 - N3;127082745;Tapa azul / morado;89
+F - C4 - N4;310095401;Rectángulo 4 puntos gris;94
+F - C4 - N5;127082715;Pinza negra ;92
+F - C5 - N1;127082755;Vara cruz fucsia ;113
+F - C5 - N2;127082731;Tapa roja ;94
+F - C5 - N3;127082762;Rectángulo 8 puntos verde - porta ejes negro cuadrado;59
+F - C5 - N4;127082763;Vara cruz blanca ;116
+F - C5 - N5;127082720;Pinza verde ;89
+F - C6 - N1;127082754;Trapecio grande verde;118
+F - C6 - N2;310424359;Porta ejes negro cuadrado - Rectángulo 4 puntos morado;100
+F - C6 - N3;127082760;Porta ejes negro redondo - Rectángulo 2 puntos gris;90
+F - C6 - N4;310302220;Trapecio pequeño rojo;120
+F - C6 - N5;304600007;Trapecio pequeño amarillo;128
+F - C7 - N1;127082753;Rectángulo 16 puntos rojo - Triángulo negro;90
+F - C7 - N2;127082759;Vara cruz roja  ;115
+F - C7 - N3;127082747;Probeta hueso azul / morado;77
+F - C7 - N4;310092013;Trompo naranjado;96
+F - C7 - N5;310014014;Ficha parqués azul;96
+F - C8 - N1;127082752;Vara cruz amarilla ;113
+F - C8 - N2;310092014;Catapis verde;90
+F - C8 - N3;127082733;Pinza roja ;96
+F - C8 - N4;127082736;Tapa verde;113
+F - C8 - N5;310099904;Rectángulo 16 puntos rojo - Rectángulo 8 puntos amarillo;73
+F - C9 - N1;127082751;Trapecio grande fucsia ;119
+F - C9 - N2;304243599;Rectángulo 8 puntos azul - Rines rojos;101
+F - C9 - N3;127082715;Pinza negra ;116
+F - C9 - N4;310015017;Triángulo negro;90
+F - C9 - N5;340311021;Rectángulo 4 puntos morado - Porta ejes negro redondo;101
+G - C1 - N1;127082768;Tapa transparente;92
+G - C1 - N2;127082767;Arbol azul;59
+G - C1 - N3;127082766;Carenaje rojo - Rectángulo 8 puntos azul;81
+G - C1 - N4;127082736;Tapa verde;92
+G - C1 - N5;127082715;Pinza negra ;91
+G - C2 - N1;127082773;Arbol verde;60
+G - C2 - N2;127082772;Portavasos negro;100
+G - C2 - N3;127082771;Portavasos amarillo;100
+G - C2 - N4;127082770;Bastón negro ;117
+G - C2 - N5;310080810;Portavasos blanco;100
+G - C3 - N1;127082776;Bastón verde ;115
+G - C3 - N2;127082775;Vara perpendicular amarilla ;113
+G - C3 - N3;127082734;Probeta hueso fucsia;77
+G - C3 - N4;127082774;Arbol amarillo;60
+G - C3 - N5;127082744;Probeta hueso roja ;78
+G - C4 - N1;127082778;Bastón amarillo ;115
+G - C4 - N2;340300608;Llantas negras - Rines blancos;104
+G - C4 - N3;127082736;Tapa verde;92
+G - C4 - N4;127082739;Tapa blanca ;90
+G - C4 - N5;127082747;Probeta hueso azul / morado;78
+G - C5 - N1;127082781;Bastón rojo ;117
+G - C5 - N2;127082780;Bastón azul / morado;114
+G - C5 - N3;127082750;Tapa fucsia;115
+G - C5 - N4;127082779;Vara cruz azul / morado;117
+G - C5 - N5;310096406;Carenaje rojo;100
+G - C6 - N1;127082785;Vara perpendicular azul / morado;98
+G - C6 - N2;127082784;Vara cruz verde ;114
+G - C6 - N3;315077013;Portvasos fucsia;100
+G - C6 - N4;127082782;Bastón fucsia ;116
+G - C6 - N5;127082783;Bastón blanco  ;102

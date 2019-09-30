@@ -13,7 +13,7 @@ const path = require('path');
 
 var upload = multer({ storage: multer.diskStorage({
 
-    destination: "/uploaded/files",
+    destination: "./uploaded/files",
 
     filename: function (req, file, cb) {
       var ext = require('path').extname(file.originalname);
@@ -40,7 +40,6 @@ module.exports = (app) => {
 
 	app.post('/api/image', upload.single("archivo"), (req, res) => {
 		const tempPath = req.file.path
-		console.log(tempPath);
 		tensorflow.init(tempPath, res);
 	});
 
