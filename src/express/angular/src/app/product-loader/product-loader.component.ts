@@ -9,7 +9,8 @@ import { ProductLoaderService } from './product-loader.service';
 })
 export class ProductLoaderComponent implements OnInit {
 
-    selectedImage: File = null;
+    private selectedImage: File = null;
+    private waitingForPrediction: boolean = false;
 
     constructor(
         private productLoaderService : ProductLoaderService
@@ -26,10 +27,16 @@ export class ProductLoaderComponent implements OnInit {
     // Activated when the user wants to send the image to the server.
     // That is, the user presses the button 'Upload'.
     onUpload() {
+        this.waitingForPrediction = true;
+
         const fd: FormData = new FormData();
         fd.append('image', this.selectedImage, this.selectedImage.name);
         var product = this.productLoaderService.sendImage(fd);
-        product.then(product => console.log(product))
+        product.then(product => this.showProduct(product))
             .catch(err => console.log(err));
+    }
+
+    showProduct(product) {
+        this.waitingForPrediction = false;
     }
 }
