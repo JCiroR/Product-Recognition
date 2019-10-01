@@ -16,7 +16,7 @@ module.exports = {
                 const prediction = pretrainedModel.predict(processedImage);
                 var predicted_idx = prediction.argMax(1).dataSync()[0];
 
-                csvToJson('./src/express/data/csv/Maestro de Inventario 2019-2 (2).csv');
+                csvToJson('./src/express/data/csv/Maestro de Inventario 2019-2.csv' );
 
                 var pred_info = null;
                 for (key in data){
@@ -27,9 +27,6 @@ module.exports = {
 
                 res.setHeader('Content-Type', 'application/json');
                 res.end(JSON.stringify(pred_info));
-                console.log(res);
-                //res.write(JSON.stringify(promise));
-                //res.setHeader('Content-Type', 'application/json');
             }).catch(err => res.end(err));
         }).catch(err => res.end(err));
     }
@@ -38,14 +35,13 @@ module.exports = {
 function csvToJson(csv) {
     var output=ETL.extract(csv,{
         delimitor:';',
-        headers:['Posición','Artículo correspondiente en la base de datos','Descripción artículo','Cantidad 2019']
+        headers:['posicion','referencia','descripcion','cantidad']
     });
     for(var key in output){
-        if (output[key]["Cantidad 2019"]){
-            output[key]["Cantidad 2019"] = parseInt(output[key]["Cantidad 2019"]);
+        if (output[key]['cantidad']){
+            output[key]['cantidad'] = parseInt(output[key]['cantidad']);
         }
     }
-
     JsonJoin(output);
     return output;
 }
@@ -55,7 +51,7 @@ function csvToJson(csv) {
 function JsonJoin(inventario) {
     try {
         for(var key in inventario){
-            if(inventario[key]['Artículo correspondiente en la base de datos']){
+            if(inventario[key]['referencia']){
                 getIds(inventario[key]);
             }
         }
@@ -68,7 +64,7 @@ function JsonJoin(inventario) {
 
 function getIds(item) {
     for (key in data){
-        if(data[key]["ref"] == item['Artículo correspondiente en la base de datos']){
+        if(data[key]["ref"] == item['referencia']){
             data[key]["ref"] = item;
         }
     }
