@@ -18,19 +18,18 @@ module.exports = {
 
                 csvToJson('./src/express/data/csv/Maestro de Inventario 2019-2 (2).csv');
 
-                var promise = null;
+                var pred_info = null;
                 for (key in data){
                     if(data[key]["prediction"]==predicted_idx){
-                        //console.log(data[key]["ref"]);
-                        promise = data[key]["ref"];
+                        pred_info = data[key]["ref"];
                     }
                 }
 
-                res.json(promise);
+                res.setHeader('Content-Type', 'application/json');
+                res.end(JSON.stringify(pred_info));
+                console.log(res);
                 //res.write(JSON.stringify(promise));
                 //res.setHeader('Content-Type', 'application/json');
-                res.end();
-
             }).catch(err => res.end(err));
         }).catch(err => res.end(err));
     }

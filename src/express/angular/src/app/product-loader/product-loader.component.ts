@@ -25,9 +25,9 @@ export class ProductLoaderComponent implements OnInit {
     onUpload() {
         const fd: FormData = new FormData();
         fd.append('image', this.selectedImage, this.selectedImage.name);
-        var product : Promise = this.productLoaderService.sendImage(fd);
+        var product = this.productLoaderService.sendImage(fd);        
         
-        product.then(product => console.log(product.json()))
+        product.then(product => console.log(product))
             .catch(err => console.log(err));
     }
 

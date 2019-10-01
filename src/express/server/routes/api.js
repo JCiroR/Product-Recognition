@@ -41,7 +41,6 @@ module.exports = (app) => {
 	app.post('/api/image', upload.single("image"), (req, res) => {
 		const tempPath = req.file.path
 		tensorflow.init(tempPath, res);
-    console.log(res.body);
 	});
 
 };
