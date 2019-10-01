@@ -9,12 +9,24 @@ import { HttpModule } from '@angular/http';
 import { ProductLoaderComponent } from './product-loader/product-loader.component';
 import { ProductLoaderService } from './product-loader/product-loader.service';
 
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+
+const appRoutes: Routes = [
+    { path: 'product-loader', component: ProductLoaderComponent },
+    { path: '', component: HomeComponent}
+  ];
+
 @NgModule({
     declarations: [
         AppComponent,
-        ProductLoaderComponent
+        ProductLoaderComponent,
+        HomeComponent
     ],
     imports: [
+        RouterModule.forRoot(
+            appRoutes
+        ),
         BrowserModule,
         AppRoutingModule,
         HttpModule
