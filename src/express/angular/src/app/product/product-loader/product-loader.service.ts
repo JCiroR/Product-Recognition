@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { map } from 'rxjs/operators';
 
-import { baseUrl } from '../base-url';
+import { baseUrl } from '../../base-url';
 
 @Injectable({
   providedIn: 'root'

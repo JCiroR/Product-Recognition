@@ -1,6 +1,6 @@
 var loadModal = require('./loadModal.js');
 var fs = require('fs');
-var csv = require("csvtojson");
+const image2base64 = require('image-to-base64');
 var ETL=require('node-etl');
 
 const jsonString = fs.readFileSync('./src/express/data/csv/id_to_ref.json');
@@ -25,9 +25,27 @@ module.exports = {
                     }
                 }
 
-                res.setHeader('Content-Type', 'application/json');
-                res.end(JSON.stringify(pred_info));
-            }).catch(err => res.end(err));
+
+                var subfolder = './src/express/data/processed/train/' + pred_info.referencia + '/';
+                fs.readdir(subfolder, (err, img_files) => {
+                    if(err){ console.log(err); return}
+                    var response_img = img_files[3]; // seleccionar una "aleatoriamente"
+                    image2base64(subfolder + response_img) // you can also to use url
+                        .then(
+                            (response) => {
+                                pred_info['imagen'] = "data:image/jpeg;base64," + response;
+                                res.setHeader('Content-Type', 'application/json');
+                                res.end(JSON.stringify(pred_info));
+                            }
+                        )
+                        .catch(
+                            (error) => {
+                                console.log(error); //Exepection error....
+                            }
+                        );
+                });
+            });
+            
         }).catch(err => res.end(err));
     }
 }

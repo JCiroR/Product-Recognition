@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ProductVisualizerComponent } from  "../product-visualizer/product-visualizer.component";
 
 import { ProductLoaderService } from './product-loader.service';
 
@@ -7,13 +8,16 @@ import { ProductLoaderService } from './product-loader.service';
     templateUrl: './product-loader.component.html',
     styleUrls: ['./product-loader.component.css']
 })
-export class ProductLoaderComponent implements OnInit {
+export class ProductLoaderComponent{
+    
+    private pvc:ProductVisualizerComponent = null;
 
-    selectedImage: File = null;
+    private selectedImage: File = null;
+    
 
-    constructor(
-        private productLoaderService : ProductLoaderService
-    ) {}
+    constructor(private productLoaderService : ProductLoaderService) {
+        this.pvc = new ProductVisualizerComponent;
+    }
 
     ngOnInit() {
     }
@@ -29,7 +33,12 @@ export class ProductLoaderComponent implements OnInit {
         const fd: FormData = new FormData();
         fd.append('image', this.selectedImage, this.selectedImage.name);
         var product = this.productLoaderService.sendImage(fd);
-        product.then(product => console.log(product))
-            .catch(err => console.log(err));
+        product.then(product=>this.showProduct(product)).catch(err=>console.log(err));
+    }
+
+    showProduct(product) {
+        if (this.pvc.setJson(product)){ 
+                console.log(this.pvc.getJson());
+        }
     }
 }
