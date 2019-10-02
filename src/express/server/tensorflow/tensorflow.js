@@ -71,8 +71,6 @@ function csvToJson(csv) {
     return output;
 }
 
-
-
 function JsonJoin(inventario) {
     try {
         for(var key in inventario){
