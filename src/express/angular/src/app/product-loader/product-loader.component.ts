@@ -27,16 +27,23 @@ export class ProductLoaderComponent implements OnInit {
     // Activated when the user wants to send the image to the server.
     // That is, the user presses the button 'Upload'.
     onUpload() {
-        this.waitingForPrediction = true;
+        if (this.selectedImage == null) {
+            console.log('No image selected');
+        } else {
+            this.waitingForPrediction = true;
 
-        const fd: FormData = new FormData();
-        fd.append('image', this.selectedImage, this.selectedImage.name);
-        var product = this.productLoaderService.sendImage(fd);
-        product.then(product => this.showProduct(product))
-            .catch(err => console.log(err));
+            // Send prediction request.
+            const fd: FormData = new FormData();
+            fd.append('image', this.selectedImage, this.selectedImage.name);
+            var product = this.productLoaderService.sendImage(fd);
+            product.then(product => this.showProduct(product))
+                .catch(err => console.log(err));
+        }
     }
 
     showProduct(product) {
         this.waitingForPrediction = false;
+        // Show image and information.
+        // here...
     }
 }
