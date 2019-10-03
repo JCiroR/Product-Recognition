@@ -1,16 +1,21 @@
 <div class="text-center">
   <h1>Cargador de Productos</h1>
 </div>
-
-<div class="row">
-  <div>
-    <input type="file" class="col btn-lg" (change)="onImageSelected($event)">
-  </div>
-
-  <div>
-    <button type="button" class="col btn-primary btn-lg" (click)="onUpload()">Upload</button>
+<div class="h-100" id="demopurpose">
+  <div class="container h-100">
+      <div class="row justify-content-center align-items-center h-100">
+          <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+              <div>              
+                <input type="file" class="col btn-lg" (change)="onImageSelected($event)">
+              </div>
+              <div>
+                <button type="button" class="col btn-primary btn-lg" (click)="onUpload()">Upload</button>
+              </div>
+        </div>
+      </div>
   </div>
 </div>
+<br>
 
 <div class="d-flex justify-content-center" *ngIf="waitingForPrediction">
   <div class="row spinner-border text-primary m-5" style="width: 14rem; height: 14rem;" role="status">
