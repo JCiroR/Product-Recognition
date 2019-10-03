@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 
 import { HttpModule } from '@angular/http';
 
-import { ProductLoaderComponent } from './product-loader/product-loader.component';
-import { ProductLoaderService } from './product-loader/product-loader.service';
+import { ProductLoaderComponent } from './product/product-loader/product-loader.component';
+import { ProductLoaderService } from './product/product-loader/product-loader.service';
+import { ProductVisualizerComponent } from './product/product-visualizer/product-visualizer.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        ProductLoaderComponent
+        ProductLoaderComponent,
+        ProductVisualizerComponent,
+        ProductComponent
     ],
     imports: [
         BrowserModule,

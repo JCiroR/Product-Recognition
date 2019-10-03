@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { ProductLoaderService } from './product-loader.service';
+import { ProductVisualizerComponent } from  "../product-visualizer/product-visualizer.component";
 
 @Component({
     selector: 'app-product-loader',
@@ -9,6 +10,7 @@ import { ProductLoaderService } from './product-loader.service';
 })
 export class ProductLoaderComponent implements OnInit {
 
+    @Output() predictionReceivedEvent = new EventEmitter<any>();
     private selectedImage: File = null;
     private waitingForPrediction: boolean = false;
 
@@ -31,6 +33,7 @@ export class ProductLoaderComponent implements OnInit {
             console.log('No image selected');
         } else {
             this.waitingForPrediction = true;
+            this.predictionReceivedEvent.emit(null);
 
             // Send prediction request.
             const fd: FormData = new FormData();
@@ -42,8 +45,8 @@ export class ProductLoaderComponent implements OnInit {
     }
 
     showProduct(product) {
+        // Hide loading spinner.
         this.waitingForPrediction = false;
-        // Show image and information.
-        // here...
+        this.predictionReceivedEvent.emit(product);
     }
 }
