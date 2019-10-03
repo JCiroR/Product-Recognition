@@ -6,14 +6,16 @@ import { AppComponent } from './app.component';
 
 import { HttpModule } from '@angular/http';
 
-import { ProductLoaderComponent } from './product-loader/product-loader.component';
-import { ProductLoaderService } from './product-loader/product-loader.service';
+import { ProductLoaderComponent } from './product/product-loader/product-loader.component';
+import { ProductLoaderService } from './product/product-loader/product-loader.service';
+import { ProductVisualizerComponent } from './product/product-visualizer/product-visualizer.component';
+import { ProductComponent } from './product/product.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
-    { path: 'product-loader', component: ProductLoaderComponent },
+    { path: 'product', component: ProductComponent },
     { path: '', component: HomeComponent}
   ];
 
@@ -21,7 +23,9 @@ const appRoutes: Routes = [
     declarations: [
         AppComponent,
         ProductLoaderComponent,
-        HomeComponent
+        HomeComponent,
+        ProductVisualizerComponent,
+        ProductComponent
     ],
     imports: [
         RouterModule.forRoot(

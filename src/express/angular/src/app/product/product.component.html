@@ -1,0 +1,5 @@
+<div>
+  <app-product-loader (predictionReceivedEvent)="onPredictionReceived($event)">
+  </app-product-loader>
+  <app-product-visualizer [product]="product" *ngIf="visualizePrediction"></app-product-visualizer>
+</div>
