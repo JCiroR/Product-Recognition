@@ -13,10 +13,9 @@ export class ProductLoaderComponent{
     private pvc:ProductVisualizerComponent = null;
 
     private selectedImage: File = null;
-    
 
     constructor(private productLoaderService : ProductLoaderService) {
-        this.pvc = new ProductVisualizerComponent;
+        
     }
 
     ngOnInit() {

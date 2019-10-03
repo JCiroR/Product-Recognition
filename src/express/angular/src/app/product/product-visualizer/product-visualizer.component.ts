@@ -1,4 +1,4 @@
-import { Component,  OnInit } from '@angular/core';
+import { Component,  OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-product-visualizer',
@@ -7,8 +7,7 @@ import { Component,  OnInit } from '@angular/core';
 })
 export class ProductVisualizerComponent implements OnInit{
 
-
-  productImport = null;
+  @Input() productImport;
   checker: boolean;
 
   constructor() { 
@@ -16,7 +15,7 @@ export class ProductVisualizerComponent implements OnInit{
 
   ngOnInit() {
     this.checker = false;
-    console.log("maldita sea");
+    this.productImport = {};
   }
 
   setJson(product){
