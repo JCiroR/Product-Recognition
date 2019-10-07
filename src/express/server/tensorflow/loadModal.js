@@ -1,5 +1,5 @@
 var tf = require('@tensorflow/tfjs');
-var tfn = require('@tensorflow/tfjs-node');
+//var tfn = require('@tensorflow/tfjs-node');
 var fs = require('fs')
 const { createCanvas, loadImage } = require('canvas');
 
@@ -7,8 +7,10 @@ module.exports = {
 
 
     loadMobilenet: function(){
-        const handler = tfn.io.fileSystem('./src/express/data/js_export/model.json');
-        const model = tf.loadLayersModel(handler);
+        //const handler = tfn.io.fileSystem('./src/express/data/js_export/model.json');
+        //const handler = tf.io.fileSystem('./src/express/data/js_export/model.json');
+        //const model = tf.loadLayersModel(handler);
+	const model = tf.loadLayersModel('localstorage://./src/express/data/js_export/model.json');
         return model;
     },
 
