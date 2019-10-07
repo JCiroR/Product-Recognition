@@ -43,7 +43,7 @@ module.exports = {
                         );
                 });
             });
-            
+
         }).catch(err => res.end(err));
     }
 }

@@ -35,5 +35,5 @@ module.exports = (app) => {
 		const tempPath = req.file.path
 		tensorflow.init(tempPath, res);
 	});
-
 };
+

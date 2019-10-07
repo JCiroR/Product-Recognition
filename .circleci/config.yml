@@ -7,8 +7,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: install-project-dependencies
+          name: Install project dependencies
           command: npm install
       - run:
-          name: test
+          name: Test NodeJS Rest API
           command: npm test
