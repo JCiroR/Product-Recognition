@@ -1,10 +1,10 @@
 var tf = require('@tensorflow/tfjs');
-var tfn = require ('@tensorflow/tfjs-node');
+var tfn = require('@tensorflow/tfjs-node');
 var fs = require('fs')
 const { createCanvas, loadImage } = require('canvas');
 
 module.exports = {
-     
+
 
     loadMobilenet: function(){
         const handler = tfn.io.fileSystem('./src/express/data/js_export/model.json');
@@ -42,10 +42,10 @@ module.exports = {
 function cropImage (img) {
     const width = img.shape[0];
     const height = img.shape[1];
-  
+
     // use the shorter side as the size to which we will crop
     const shorterSide = Math.min(img.shape[0], img.shape[1]);
-  
+
     // calculate beginning and ending crop points
     const startingHeight = (height - shorterSide) / 2;
     const startingWidth = (width - shorterSide) / 2;
@@ -63,8 +63,7 @@ function resizeImage (image) {
 function batchImage (image) {
     // Expand our tensor to have an additional dimension, whose size is 1
     const batchedImage = image.expandDims(0);
-  
+
     // Turn pixel data into a float between -1 and 1.
     return batchedImage.toFloat().div(tf.scalar(127)).sub(tf.scalar(1));
 }
-

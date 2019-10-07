@@ -1,9 +1,9 @@
-version: 2
+version: 2.1
 jobs:
   build:
-    working_directory: ~/test
+    working_directory: ~/build-test # Where steps will run.
     docker:
-      - image: circleci/node:9.9.0
+      - image: circleci/node:10.16.3
     steps:
       - checkout
       - run:
