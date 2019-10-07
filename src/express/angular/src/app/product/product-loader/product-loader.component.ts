@@ -12,7 +12,7 @@ export class ProductLoaderComponent implements OnInit {
 
     @Output() predictionReceivedEvent = new EventEmitter<any>();
     private selectedImage: File = null;
-    private waitingForPrediction: boolean = false;
+    public waitingForPrediction: boolean = false;
 
     constructor(
         private productLoaderService : ProductLoaderService
