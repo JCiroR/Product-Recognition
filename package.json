@@ -13,8 +13,8 @@
     "test": "./node_modules/mocha/bin/mocha --exit --timeout 20000"
   },
   "dependencies": {
-    "@tensorflow/tfjs": "1.2.8",
-    "@tensorflow/tfjs-node": "1.2.8",
+    "@tensorflow/tfjs": "^1.2.8",
+    "@tensorflow/tfjs-node": "^1.2.8",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "bootstrap": "^3.4.1",
