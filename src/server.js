@@ -33,7 +33,7 @@ require('./express/server/routes/api')(app);
 ////////////////////////////////////////////////////
 
 const host = '0.0.0.0';
-const port = process.env.PORT || '8080';
+const port = process.env.PORT || '3000';
 app.set('port', port);
 
 const server = http.createServer(app);
