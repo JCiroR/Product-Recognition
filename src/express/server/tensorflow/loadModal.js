@@ -9,6 +9,7 @@ module.exports = {
     loadMobilenet: function(){
         const handler = tfn.io.fileSystem('./src/express/data/js_export/model.json');
         const model = tf.loadLayersModel(handler);
+
         return model;
     },
 
