@@ -26,10 +26,9 @@ var upload = multer({ storage: multer.diskStorage({
 
 module.exports = (app) => {
 	// Ruta inicial
-	app.get('/api', (req, res) => {
-		console.log(__dirname)
-		res.sendFile('uploadfile.html', {root: __dirname});
-	});
+	//app.get('/api', (req, res) => {
+	//	res.sendFile('../../angular/dist/angular/index.html', {root: __dirname});
+	//});
 
 	app.post('/api/image', upload.single("image"), (req, res) => {
 		const tempPath = req.file.path

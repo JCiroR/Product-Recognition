@@ -24,7 +24,6 @@ export class ProductComponent implements OnInit {
         else {
             this.visualizePrediction = true;
             this.product = $event;
-            console.log(this.product);
         }
     }
 
