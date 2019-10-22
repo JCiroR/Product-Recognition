@@ -1,11 +1,9 @@
 var loadModal = require('./loadModal.js');
 var fs = require('fs');
 const image2base64 = require('image-to-base64');
-var ETL=require('node-etl');
-
+var ETL = require('node-etl');
 const jsonString = fs.readFileSync('./src/express/data/csv/id_to_ref.json');
 const data = JSON.parse(jsonString);
-
 
 module.exports = {
 
@@ -45,7 +43,7 @@ module.exports = {
                         );
                 });
             });
-            
+
         }).catch(err => res.end(err));
     }
 }

@@ -10,8 +10,8 @@ import { ProductLoaderComponent } from './product-loader/product-loader.componen
 
 export class ProductComponent implements OnInit {
 
-    private visualizePrediction: boolean = false;
-    private product;
+    public visualizePrediction: boolean = false;
+    public product;
 
     constructor() { }
 
@@ -24,7 +24,6 @@ export class ProductComponent implements OnInit {
         else {
             this.visualizePrediction = true;
             this.product = $event;
-            console.log(this.product);
         }
     }
 
