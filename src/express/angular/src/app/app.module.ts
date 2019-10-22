@@ -13,10 +13,14 @@ import { ProductComponent } from './product/product.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { OrdersComponent } from './orders/orders.component';
+import { UserIdentifierComponent } from './user-identifier/user-identifier.component';
 
 const appRoutes: Routes = [
+    { path: '', component: HomeComponent },
     { path: 'product', component: ProductComponent },
-    { path: '', component: HomeComponent}
+    { path: 'user', component: UserIdentifierComponent },
+    { path: "orders/:user_id", component: OrdersComponent }
   ];
 
 @NgModule({
@@ -25,7 +29,9 @@ const appRoutes: Routes = [
         ProductLoaderComponent,
         HomeComponent,
         ProductVisualizerComponent,
-        ProductComponent
+        ProductComponent,
+        OrdersComponent,
+        UserIdentifierComponent
     ],
     imports: [
         RouterModule.forRoot(

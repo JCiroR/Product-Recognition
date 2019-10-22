@@ -3,12 +3,12 @@ module.exports = (app) => {
     //////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////INICIO////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////
-    
+
     // Enable requests
     var cors = require('cors');
     var allowedOrigins = ['http://whlab.dis.eafit.edu.co'];
     const corsOptions = {
-    	origin: function(origin, callback){    // allow requests with no origin 
+    	origin: function(origin, callback){    // allow requests with no origin
     	    // (like mobile apps or curl requests)
     	    if (!origin) return callback(null, true);
     	    if (allowedOrigins.indexOf(origin) === -1) {
@@ -26,10 +26,10 @@ module.exports = (app) => {
 
     // Ruta inicial
     app.get('/', (req, res) => {
-	res.render('index');
+	      res.render('index');
     });
-    
-    
+
+
     // logout
     app.get('/logout', (req, res) => {
 	req.logout();
