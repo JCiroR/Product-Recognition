@@ -15,6 +15,17 @@ var upload = multer({ storage: multer.diskStorage({
     }
 })});
 
+var mongoose = require("mongoose");
+var fs = require("fs");
+
+mongoose.connect('mongodb://localhost/csvimport', {useNewUrlParser: true});
+
+var load_file = require('../picking/load_file.js');
+
+fs.readFile('./src/express/data/csv/picktoPart.csv', function(err, data) {
+  load_file.load_file(data); 
+});
+
 
 module.exports = (app) => {
 	app.post('/api/image', upload.single("image"), (req, res) => {
