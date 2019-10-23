@@ -37,6 +37,25 @@ module.exports = (app) => {
 		tensorflow.init(tempPath, res);
   });
 
+  app.post('/api/validate_photo/', (req, res) => {
+    //TODO Implementar este método
+    var rand = Math.floor(Math.random() * (10 + 1))
+    var response;
+    if (rand % 2 == 0) {
+      response = {status: 'MATCH'}
+    } else {
+      response = {status: 'ERROR'}
+    }
+    res.end(JSON.stringify(response))
+  });
+
+  app.post('/api/new_medium/', (req, res) => {
+    var query = {pedido: req.body["id_pedido"]}
+    var update = {medio: req.body["nuevo_medio"]}
+    load_file.PickingFile.updateOne(query, { $set: update}).exec()
+    res.sendStatus(200);
+  });
+
   app.get('/api/orders/:id', (req, res) => {
     orders = []
     load_file.PickingFile.find({usuario: req.params.id}).exec(function (err, found_orders) {
@@ -47,11 +66,14 @@ module.exports = (app) => {
     });
   });
 
-  app.post('/api/new_mean/', (req, res) => {
-    var query = {pedido: req.body["id_pedido"]}
-    var update = {medio: req.body["nuevo_medio"]}
-    load_file.PickingFile.updateOne(query, { $set: update}).exec()
-    res.sendStatus(200);
+  app.get('/api/next_product/:id_pedido', (req, res) => {
+    var response = {
+      posicion: "A-C2-N4",
+      referencia: "123123522",
+      descripcion: "pieza roja",
+      cantidad: "3"
+    }
+    res.end(JSON.stringify(response))
   });
 };
 
