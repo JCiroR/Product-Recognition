@@ -18,6 +18,7 @@ var upload = multer({ storage: multer.diskStorage({
 var mongoose = require("mongoose");
 var fs = require("fs");
 
+
 mongoose.connect('mongodb://localhost/whldb', {useNewUrlParser: true});
 
 var load_file = require('../picking/load_file.js');
@@ -26,9 +27,11 @@ fs.readFile('./src/express/data/csv/picktoPart.csv', function(err, data) {
   load_file.load_file(data); 
 });
 
-var express = require('express');
+var bodyParser = require('body-parser');
 
 module.exports = (app) => {
+  app.use(bodyParser.json());
+
 	app.post('/api/image', upload.single("image"), (req, res) => {
 		const tempPath = req.file.path
 		tensorflow.init(tempPath, res);
@@ -42,6 +45,13 @@ module.exports = (app) => {
       });
       return res.end(JSON.stringify(orders));
     });
+  });
+
+  app.post('/api/new_mean/', (req, res) => {
+    var query = {pedido: req.body["id_pedido"]}
+    var update = {medio: req.body["nuevo_medio"]}
+    load_file.PickingFile.updateOne(query, { $set: update}).exec()
+    res.sendStatus(200);
   });
 };
 
