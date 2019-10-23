@@ -26,11 +26,22 @@ fs.readFile('./src/express/data/csv/picktoPart.csv', function(err, data) {
   load_file.load_file(data); 
 });
 
+var express = require('express');
 
 module.exports = (app) => {
 	app.post('/api/image', upload.single("image"), (req, res) => {
 		const tempPath = req.file.path
 		tensorflow.init(tempPath, res);
-	});
+  });
+
+  app.get('/api/orders/:id', (req, res) => {
+    orders = []
+    load_file.PickingFile.find({usuario: req.params.id}).exec(function (err, found_orders) {
+      found_orders.map(order => {        
+        orders.push({id_pedido: order["pedido"], medio: order["medio"]});
+      });
+      return res.end(JSON.stringify(orders));
+    });
+  });
 };
 
