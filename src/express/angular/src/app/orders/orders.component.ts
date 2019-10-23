@@ -10,7 +10,8 @@ import { OrdersService } from './orders.service';
 })
 export class OrdersComponent implements OnInit {
 
-    public waitingForOrders: boolean = true;
+    private waitingForOrders: boolean = true;
+    private orders: Array<Object>;
 
     constructor(
         private route: ActivatedRoute,
@@ -25,14 +26,17 @@ export class OrdersComponent implements OnInit {
     }
 
     onOrdersRequestReceived(userID: string) {
-        //GET /api/orders id_usuario: userID
-        var orders = this.ordersService.requestOrders(userID);
+        //GET /api/orders/id_usuario
+        var orders = this.ordersService.requestOrders(userID).then(
+            result => {
+                this.visualizeOrders(result);
+            }
+        );
     }
 
-    onOrdersReceived($event) {
+    visualizeOrders(orders) {
         this.waitingForOrders = false;
-        this.listOrders($event);
+        this.orders = orders;
+        console.log(this.orders);
     }
-
-    listOrders(orders) {}
 }

@@ -14,7 +14,12 @@ export class OrdersService {
     ) {}
 
     requestOrders(userID: string) {
-        var res = this.http.get(baseUrl + '/orders/' + userID)
-            .pipe(map(data => data.json())).toPromise();
+        return this.http.get(baseUrl + '/orders/' + userID)
+            .pipe(map(response => {
+                //const parsedResponse = JSON.parse(response.json()) as any[];
+                const parsedResponse = response.json();
+                //console.log(parsedResponse[0]['id_pedido']);
+                return parsedResponse;
+            })).toPromise();
     }
 }
