@@ -56,6 +56,11 @@ module.exports = (app) => {
     res.sendStatus(200);
   });
 
+  app.post('/api/take_product', (req, res) => {
+    //TODO implementar este metodo
+    res.sendStatus(200);
+  });
+
   app.get('/api/orders/:id', (req, res) => {
     orders = []
     load_file.PickingFile.find({usuario: req.params.id}).exec(function (err, found_orders) {
@@ -67,6 +72,7 @@ module.exports = (app) => {
   });
 
   app.get('/api/next_product/:id_pedido', (req, res) => {
+    //TODO implementar este método
     var response = {
       posicion: "A-C2-N4",
       referencia: "123123522",
