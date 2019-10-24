@@ -15,12 +15,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { OrdersComponent } from './orders/orders.component';
 import { UserIdentifierComponent } from './user-identifier/user-identifier.component';
+import { ProductPickerComponent } from './product-picker/product-picker.component';
+import { ProductPickerService } from './product-picker/product-picker.service';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'product', component: ProductComponent },
     { path: 'user', component: UserIdentifierComponent },
-    { path: "orders/:user_id", component: OrdersComponent }
+    { path: "orders/:user_id", component: OrdersComponent },
+    { path: "picker/:order_id/:medium_id", component: ProductPickerComponent }
   ];
 
 @NgModule({
@@ -31,7 +34,8 @@ const appRoutes: Routes = [
         ProductVisualizerComponent,
         ProductComponent,
         OrdersComponent,
-        UserIdentifierComponent
+        UserIdentifierComponent,
+        ProductPickerComponent
     ],
     imports: [
         RouterModule.forRoot(
@@ -42,7 +46,8 @@ const appRoutes: Routes = [
         HttpModule
     ],
     providers: [
-        ProductLoaderService
+        ProductLoaderService,
+        ProductPickerService
     ],
     bootstrap: [AppComponent]
 })

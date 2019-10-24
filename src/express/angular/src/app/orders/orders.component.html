@@ -5,8 +5,19 @@
 <div class="h-100" id="demopurpose">
   <div class="container h-100">
     <div class="row justify-content-center align-items-center h-100">
-      <div class="col-12 col-sm-8 col-md-6 col-lg-4" *ngFor="let order of orders">
-        {{ order['id_pedido'] }}
+      <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+
+        <div *ngFor="let order of orders; let idx = index">
+          <button type="button" class="col btn btn-outline-primary btn-lg m-1" (click)="onShowMediumInput(idx)">Pedido: {{ order['id_pedido'] }}</button>
+          <div [class.hidden]="notShowMediumInputs[idx]">
+            <input class="col" id="{{ 'medium-input-' + idx }}" type="text" placeholder="Igrese ID del medio"
+                    #mediumID (focusout)="obtainMediumID(idx, mediumID.value)" value="{{ mediumIDs[idx] }}">
+            <button id="test" class="col"
+                    [routerLink]="((mediumID.value == null) || (mediumID.value == undefined) || (mediumID.value == '')) ? [] : 
+                                  ['/picker', order['id_pedido'], mediumID.value]">Ir</button>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

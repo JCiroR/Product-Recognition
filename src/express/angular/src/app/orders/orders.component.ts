@@ -11,7 +11,9 @@ import { OrdersService } from './orders.service';
 export class OrdersComponent implements OnInit {
 
     private waitingForOrders: boolean = true;
-    private orders: Array<Object>;
+    private orders: Array<Object>; // Orders IDs.
+    private notShowMediumInputs: Array<boolean>; // Show or not show medium input.
+    private mediumIDs: Array<String>; // Medium IDs.
 
     constructor(
         private route: ActivatedRoute,
@@ -27,16 +29,35 @@ export class OrdersComponent implements OnInit {
 
     onOrdersRequestReceived(userID: string) {
         //GET /api/orders/id_usuario
-        var orders = this.ordersService.requestOrders(userID).then(
+        this.ordersService.requestOrders(userID).then(
             result => {
-                this.visualizeOrders(result);
+                this.waitingForOrders = false;
+                this.orders = result;
+
+                // Initialize mediums arrays.
+                this.mediumIDs = new Array(this.orders.length);
+                this.notShowMediumInputs = new Array(this.orders.length);
+
+                // Initialize array of booleans.
+                for (var i = 0; i < this.orders.length; i++) {
+                    this.notShowMediumInputs[i] = true;
+                }
             }
         );
     }
 
-    visualizeOrders(orders) {
-        this.waitingForOrders = false;
-        this.orders = orders;
-        console.log(this.orders);
+    onShowMediumInput(index) {
+        // Hide or unhide.
+        this.notShowMediumInputs[index] = !this.notShowMediumInputs[index];
+        this.setFocusOnInput(index);
+    }
+
+    setFocusOnInput(inputIdx) {
+        var input = document.getElementById('medium-input-' + inputIdx);
+        input.focus();
+    }
+
+    obtainMediumID(mediumIndex, mediumID: string) {
+        this.mediumIDs[mediumIndex] = mediumID;
     }
 }
