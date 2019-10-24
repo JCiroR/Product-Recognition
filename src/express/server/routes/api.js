@@ -22,9 +22,10 @@ var fs = require("fs");
 mongoose.connect('mongodb://localhost/whldb', {useNewUrlParser: true});
 
 var load_file = require('../picking/load_file.js');
+var picking_file = require('../picking/picking_file.js');
 
 fs.readFile('./src/express/data/csv/picktoPart.csv', function(err, data) {
-  load_file.load_file(data); 
+  load_file.load_file(data);
 });
 
 var bodyParser = require('body-parser');
@@ -51,8 +52,8 @@ module.exports = (app) => {
 
   app.post('/api/new_medium/', (req, res) => {
     var query = {pedido: req.body["id_pedido"]}
-    var update = {medio: req.body["nuevo_medio"]}
-    load_file.PickingFile.updateOne(query, { $set: update}).exec()
+    var update = {medio_actual: req.body["nuevo_medio"]}
+    picking_file.PickingFile.updateOne(query, { $set: update}).exec()
     res.sendStatus(200);
   });
 
@@ -63,9 +64,9 @@ module.exports = (app) => {
 
   app.get('/api/orders/:id', (req, res) => {
     orders = []
-    load_file.PickingFile.find({usuario: req.params.id}).exec(function (err, found_orders) {
+    picking_file.PickingFile.find({usuario: req.params.id}).exec(function (err, found_orders) {
       found_orders.map(order => {        
-        orders.push({id_pedido: order["pedido"], medio: order["medio"]});
+        orders.push({id_pedido: order["pedido"], medio: order["medio_actual"] || ""});
       });
       return res.end(JSON.stringify(orders));
     });
