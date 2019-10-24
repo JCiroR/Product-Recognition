@@ -19,7 +19,7 @@ var mongoose = require("mongoose");
 var fs = require("fs");
 
 
-mongoose.connect('mongodb://localhost/whldb', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/whldb', {useNewUrlParser: true, useFindAndModify: false});
 
 var load_file = require('../picking/load_file.js');
 var picking_file = require('../picking/picking_file.js');
@@ -47,7 +47,8 @@ module.exports = (app) => {
     } else {
       response = {status: 'ERROR'}
     }
-    res.end(JSON.stringify(response))
+    res.json(response);
+    res.end();
   });
 
   app.post('/api/new_medium/', (req, res) => {
@@ -58,8 +59,21 @@ module.exports = (app) => {
   });
 
   app.post('/api/take_product', (req, res) => {
-    //TODO implementar este metodo
-    res.sendStatus(200);
+    var id_pedido = Number(req.body.id_pedido);
+    var referencia = req.body.ref;
+    picking_file.PickingFile.findOne({'pedido': id_pedido}, function(err, order){
+      picking_file.PickingFile.findOneAndUpdate(
+        { "pedido": id_pedido, "productos.referencia" : referencia}, 
+        { $set: 
+          {
+            "productos.$.ejecutado_picking" : true, 
+            "productos.$.medio": order.medio_actual
+          }
+        }, function(err){
+          if (err) throw err;
+        });
+        res.sendStatus(200);
+    })
   });
 
   app.get('/api/orders/:id', (req, res) => {
@@ -68,19 +82,29 @@ module.exports = (app) => {
       found_orders.map(order => {        
         orders.push({id_pedido: order["pedido"], medio: order["medio_actual"] || ""});
       });
-      return res.end(JSON.stringify(orders));
+      res.json(orders);
+      res.end();
     });
   });
 
   app.get('/api/next_product/:id_pedido', (req, res) => {
-    //TODO implementar este método
-    var response = {
-      posicion: "A-C2-N4",
-      referencia: "123123522",
-      descripcion: "pieza roja",
-      cantidad: "3"
-    }
-    res.end(JSON.stringify(response))
+    const pedido = Number(req.params.id_pedido);
+    picking_file.PickingFile.aggregate([
+      {$unwind: "$productos"},
+      {$match: {"pedido": pedido, "productos.ejecutado_picking": false}},
+      {$limit: 1}
+    ])
+    .then(function (query_result){
+      console.log(query_result);
+      if (query_result.length==0) return res.end();
+      var product = {};
+      product.referencia = query_result[0].productos.referencia;
+      product.posicion = query_result[0].productos.posicion;
+      product.cantidad = query_result[0].productos.cantidad;
+      res.json(product);
+      res.end();
+    })
+    .catch(err => console.log(err));
   });
 };
 
