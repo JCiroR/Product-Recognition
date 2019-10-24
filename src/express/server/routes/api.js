@@ -18,6 +18,7 @@ var upload = multer({ storage: multer.diskStorage({
 var mongoose = require("mongoose");
 var fs = require("fs");
 
+
 mongoose.connect('mongodb://localhost/whldb', {useNewUrlParser: true});
 
 var load_file = require('../picking/load_file.js');
@@ -26,12 +27,38 @@ fs.readFile('./src/express/data/csv/picktoPart.csv', function(err, data) {
   load_file.load_file(data); 
 });
 
-var express = require('express');
+var bodyParser = require('body-parser');
 
 module.exports = (app) => {
+  app.use(bodyParser.json());
+
 	app.post('/api/image', upload.single("image"), (req, res) => {
 		const tempPath = req.file.path
 		tensorflow.init(tempPath, res);
+  });
+
+  app.post('/api/validate_photo/', (req, res) => {
+    //TODO Implementar este método
+    var rand = Math.floor(Math.random() * (10 + 1))
+    var response;
+    if (rand % 2 == 0) {
+      response = {status: 'MATCH'}
+    } else {
+      response = {status: 'ERROR'}
+    }
+    res.end(JSON.stringify(response))
+  });
+
+  app.post('/api/new_medium/', (req, res) => {
+    var query = {pedido: req.body["id_pedido"]}
+    var update = {medio: req.body["nuevo_medio"]}
+    load_file.PickingFile.updateOne(query, { $set: update}).exec()
+    res.sendStatus(200);
+  });
+
+  app.post('/api/take_product', (req, res) => {
+    //TODO implementar este metodo
+    res.sendStatus(200);
   });
 
   app.get('/api/orders/:id', (req, res) => {
@@ -42,6 +69,17 @@ module.exports = (app) => {
       });
       return res.end(JSON.stringify(orders));
     });
+  });
+
+  app.get('/api/next_product/:id_pedido', (req, res) => {
+    //TODO implementar este método
+    var response = {
+      posicion: "A-C2-N4",
+      referencia: "123123522",
+      descripcion: "pieza roja",
+      cantidad: "3"
+    }
+    res.end(JSON.stringify(response))
   });
 };
 
