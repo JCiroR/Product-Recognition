@@ -5,6 +5,31 @@ var ETL = require('node-etl');
 const jsonString = fs.readFileSync('./src/express/data/csv/id_to_ref.json');
 const data = JSON.parse(jsonString);
 
+function validate (src, ref, res){
+    loadModal.loadMobilenet().then(pretrainedModel => {
+        loadModal.loadImageCustom(src).then(img => {
+
+            const processedImage = loadModal.loadAndProcessImage(img);
+            const prediction = pretrainedModel.predict(processedImage);
+            var prediction_probs = prediction.dataSync();
+            var treshold = prediction.dataSync().sort().reverse()[4];
+            
+            var valid_prediction = prediction_probs.map(x => x>=treshold);
+
+            var subfolder = './src/express/data/processed/train/';
+            fs.readdir(subfolder, (err, products) => {
+                var ref_id = products.indexOf(ref);
+                var is_valid = valid_prediction[ref_id]==1;
+                if (is_valid) res.json({status: 'MATCH'});
+                else res.json({status: "ERROR"});
+                res.end();
+                
+            })
+        }).catch(err => res.end(err));;
+
+    }).catch(err => res.end(err));
+}
+
 module.exports = {
 
     init: function (src, res){
@@ -45,7 +70,9 @@ module.exports = {
             });
 
         }).catch(err => res.end(err));
-    }
+    },
+
+    validate: validate
 }
 
 function csvToJson(csv) {

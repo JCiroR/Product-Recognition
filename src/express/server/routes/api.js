@@ -34,21 +34,13 @@ module.exports = (app) => {
   app.use(bodyParser.json());
 
 	app.post('/api/image', upload.single("image"), (req, res) => {
-		const tempPath = req.file.path
-		tensorflow.init(tempPath, res);
+    const tempPath = req.file.path;
+    tensorflow.init(tempPath, res);
   });
 
-  app.post('/api/validate_photo/', (req, res) => {
-    //TODO Implementar este método
-    var rand = Math.floor(Math.random() * (10 + 1))
-    var response;
-    if (rand % 2 == 0) {
-      response = {status: 'MATCH'}
-    } else {
-      response = {status: 'ERROR'}
-    }
-    res.json(response);
-    res.end();
+  app.post('/api/validate_photo/', upload.single("image"), (req, res) => {
+    const tempPath = req.file.path;
+    tensorflow.validate(tempPath, req.body.ref, res);
   });
 
   app.post('/api/new_medium/', (req, res) => {
@@ -95,7 +87,6 @@ module.exports = (app) => {
       {$limit: 1}
     ])
     .then(function (query_result){
-      console.log(query_result);
       if (query_result.length==0) return res.end();
       var product = {};
       product.referencia = query_result[0].productos.referencia;
