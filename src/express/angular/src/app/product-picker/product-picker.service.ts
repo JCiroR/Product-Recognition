@@ -16,8 +16,7 @@ export class ProductPickerService {
   registerMedium(orderID: string, mediumID: string) {
     return this.http.post(baseUrl + '/new_medium', { 'id_pedido': orderID, 'nuevo_medio': mediumID})
         .pipe(map(response => {
-          console.log('here');
-          return response.json();
+          return response;
         })).toPromise();
   }
 
@@ -26,5 +25,11 @@ export class ProductPickerService {
       .pipe(map(response => {
         return response.json();
       })).toPromise();
+  }
+
+  sendImage(image) {
+    var res = this.http.post(baseUrl + '/validate_photo', image)
+        .pipe(map(data => data.json())).toPromise();
+    return res;
   }
 }

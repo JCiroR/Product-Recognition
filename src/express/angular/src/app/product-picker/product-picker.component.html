@@ -16,7 +16,7 @@
 
                     <div class="card-body py-4">
                         <h2 class="text-dark h5 font-weight-bold mt-4 mb-1">
-                            Descripción
+                            {{ currentProduct.descripcion }}                            
                         </h2>
                         <div class="d-flex px-1 w-100 align-items-center text-left">
                             <div class="w-100">
@@ -40,6 +40,44 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container h-100" *ngIf="testingPickedProduct">
+        <h2 class="text-center">Comprobar producto</h2>
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                <div>              
+                    <input type="file" class="col btn-lg" (change)="onImageSelected($event)">
+                </div>
+                <div>
+                    <button type="button" class="col btn-primary btn-lg" (click)="onUpload()">Cargar</button>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="showStatus">
+            <div class="d-flex justify-content-center" *ngIf="waitingForPrediction">
+                <div class="row spinner-border text-primary m-5" style="width: 14rem; height: 14rem;" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center" *ngIf="!waitingForPrediction">
+                <p class="h3 text-danger" *ngIf="notCorrectlyChosen">Selecciona otro producto</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container h-100" *ngIf="selectingNextProduct">
+        <div class="row justify-content-center align-items-center h-100" *ngIf="!waitingForPrediction">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                <p class="h3 text-success text-center" *ngIf="correctlyChosen">Correcto!</p>
+                <button class="col btn btn-success btn-lg" (click)="nextProduct(orderID)">Siguiente producto</button>
+                <h4 class="text-center m-2">Desea cambiar el medio?</h4>
+                <input class="col m-1" type="text" placeholder="Igrese ID del medio" #mediumID>
+                <button class="col btn btn-primary m-1 btn-lg" (click)="registerMedium(orderID, mediumID.value)">Cambiar</button>
             </div>
         </div>
     </div>

@@ -12,7 +12,7 @@
           <div [class.hidden]="notShowMediumInputs[idx]">
             <input class="col" id="{{ 'medium-input-' + idx }}" type="text" placeholder="Igrese ID del medio"
                     #mediumID (focusout)="obtainMediumID(idx, mediumID.value)" value="{{ mediumIDs[idx] }}">
-            <button id="test" class="col"
+            <button class="col btn btn-primary"
                     [routerLink]="((mediumID.value == null) || (mediumID.value == undefined) || (mediumID.value == '')) ? [] : 
                                   ['/picker', order['id_pedido'], mediumID.value]">Ir</button>
           </div>
