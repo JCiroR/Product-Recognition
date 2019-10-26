@@ -15,7 +15,7 @@ export class ProductLoaderService {
     ) {}
 
     sendImage(image) {
-        var res = this.http.post(baseUrl + '/image', image)
+        var res = this.http.post(baseUrl + '/validate_photo', image)
             .pipe(map(data => data.json())).toPromise();
         return res;
     }

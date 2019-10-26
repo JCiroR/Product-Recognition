@@ -13,10 +13,17 @@ import { ProductComponent } from './product/product.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { OrdersComponent } from './orders/orders.component';
+import { UserIdentifierComponent } from './user-identifier/user-identifier.component';
+import { ProductPickerComponent } from './product-picker/product-picker.component';
+import { ProductPickerService } from './product-picker/product-picker.service';
 
 const appRoutes: Routes = [
+    { path: '', component: HomeComponent },
     { path: 'product', component: ProductComponent },
-    { path: '', component: HomeComponent}
+    { path: 'user', component: UserIdentifierComponent },
+    { path: "orders/:user_id", component: OrdersComponent },
+    { path: "picker/:user_id/:order_id/:medium_id", component: ProductPickerComponent }
   ];
 
 @NgModule({
@@ -25,7 +32,10 @@ const appRoutes: Routes = [
         ProductLoaderComponent,
         HomeComponent,
         ProductVisualizerComponent,
-        ProductComponent
+        ProductComponent,
+        OrdersComponent,
+        UserIdentifierComponent,
+        ProductPickerComponent
     ],
     imports: [
         RouterModule.forRoot(
@@ -36,7 +46,8 @@ const appRoutes: Routes = [
         HttpModule
     ],
     providers: [
-        ProductLoaderService
+        ProductLoaderService,
+        ProductPickerService
     ],
     bootstrap: [AppComponent]
 })
