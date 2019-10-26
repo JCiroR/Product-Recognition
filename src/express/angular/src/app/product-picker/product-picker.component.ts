@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { ProductPickerService } from './product-picker.service';
 
@@ -20,9 +20,10 @@ export class ProductPickerComponent implements OnInit {
   private testingPickedProduct: boolean = false;
   private selectingNextProduct: boolean = false;
 
-  private currentProduct; // Holds the product sent by the backend.
-  private currentMediumID: string; // ID of the medium currently in use.
-  private orderID: string; // ID of the order currently being picked.
+  private userID = null;
+  private currentProduct = null; // Holds the product sent by the backend.
+  private currentMediumID: string = null; // ID of the medium currently in use.
+  private orderID: string = null; // ID of the order currently being picked.
   private imageToTest: File = null; // Image that will be sent to the backend.
 
   // Show product correctly/not correcly chosen.
@@ -31,11 +32,13 @@ export class ProductPickerComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private pickerService: ProductPickerService
+    private pickerService: ProductPickerService,
+    private router: Router
   ) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
+      this.userID = this.route.snapshot.params.user_id;
       this.orderID = this.route.snapshot.params.order_id;
       this.currentMediumID = this.route.snapshot.params.medium_id;
       this.onOrderAndMediumReceived(this.orderID, this.currentMediumID);
@@ -60,10 +63,6 @@ export class ProductPickerComponent implements OnInit {
             this.currentMediumID = mediumID;
             this.registeringMedium = false;
 
-            // Stop showing image tester <div>s.
-            this.testingPickedProduct = false;
-            // Show next product <div>s.
-            this.selectingNextProduct = true;
             this.nextProduct(orderID);
           }
         }, error => {
@@ -77,6 +76,13 @@ export class ProductPickerComponent implements OnInit {
     // Ask for next product to backend.
     this.pickerService.nextProduct(orderID).then(
       result => {
+        if (this.currentProduct != null) {
+          this.pickerService.takeProduct(this.currentProduct);
+        }
+        
+        // Add way of returning to orders list.
+        // HERE ...
+
         // Stop showing loading symbol.
         this.waitingForProduct = false;
         // Stop showing next product <div>s.
@@ -121,6 +127,7 @@ export class ProductPickerComponent implements OnInit {
             this.selectingNextProduct = true;
           } else {
             this.notCorrectlyChosen = true;
+            this.selectingNextProduct = false;
           }
         }, error => {}
       );

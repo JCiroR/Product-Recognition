@@ -14,6 +14,7 @@ export class OrdersComponent implements OnInit {
     private orders: Array<Object>; // Orders IDs.
     private notShowMediumInputs: Array<boolean>; // Show or not show medium input.
     private mediumIDs: Array<String>; // Medium IDs.
+    private userID = null;
 
     constructor(
         private route: ActivatedRoute,
@@ -22,8 +23,8 @@ export class OrdersComponent implements OnInit {
 
     ngOnInit() {
         this.route.paramMap.subscribe(params => {
-            var userID = this.route.snapshot.params.user_id;
-            this.onOrdersRequestReceived(userID);
+            this.userID = this.route.snapshot.params.user_id;
+            this.onOrdersRequestReceived(this.userID);
         });
     }
 

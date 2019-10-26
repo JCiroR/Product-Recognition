@@ -32,4 +32,11 @@ export class ProductPickerService {
         .pipe(map(data => data.json())).toPromise();
     return res;
   }
+
+  takeProduct(product) {
+    return this.http.post(baseUrl + '/take_product', product)
+        .pipe(map(response => {
+          return response;
+        })).toPromise();
+  }
 }

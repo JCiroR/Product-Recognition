@@ -14,7 +14,7 @@
                     #mediumID (focusout)="obtainMediumID(idx, mediumID.value)" value="{{ mediumIDs[idx] }}">
             <button class="col btn btn-primary"
                     [routerLink]="((mediumID.value == null) || (mediumID.value == undefined) || (mediumID.value == '')) ? [] : 
-                                  ['/picker', order['id_pedido'], mediumID.value]">Ir</button>
+                                  ['/picker', userID, order['id_pedido'], mediumID.value]">Ir</button>
           </div>
         </div>
 
