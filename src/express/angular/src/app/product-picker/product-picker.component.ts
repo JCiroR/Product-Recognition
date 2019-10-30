@@ -74,14 +74,26 @@ export class ProductPickerComponent implements OnInit {
 
   nextProduct(orderID: string) {
     // Ask for next product to backend.
+    if (this.currentProduct != null) {
+      // Wait for take product
+      this.pickerService.takeProduct(this.currentProduct, this.orderID).then(
+        result => {this.nextProduct_(orderID);}
+      );
+    }
+    else {
+      this.nextProduct_(orderID);
+    }
+  }
+
+  nextProduct_(orderID: string) {
     this.pickerService.nextProduct(orderID).then(
-      result => {
-        if (this.currentProduct != null) {
-          this.pickerService.takeProduct(this.currentProduct);
+      result => {   
+
+        // Return to orders list if empty
+        console.log(result);
+        if (result.status=="EMPTY") {
+          this.router.navigate(['/orders/', this.userID]);
         }
-        
-        // Add way of returning to orders list.
-        // HERE ...
 
         // Stop showing loading symbol.
         this.waitingForProduct = false;
@@ -118,7 +130,7 @@ export class ProductPickerComponent implements OnInit {
       const fd: FormData = new FormData();
       fd.append('image', this.imageToTest, this.imageToTest.name);
       
-      this.pickerService.sendImage(fd).then(
+      this.pickerService.sendImage(fd, this.currentProduct.referencia).then(
         result => {
           this.waitingForPrediction = false;
           this.showStatus = true;

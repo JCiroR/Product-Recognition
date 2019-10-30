@@ -1,5 +1,5 @@
 <div class="text-center">
-    <h1>Pickear Productos</h1>
+    <h1 class="mt-2">Picking</h1>
 </div>
 
 <div class="d-flex justify-content-center" *ngIf="registeringMedium || waitingForProduct">
@@ -13,11 +13,8 @@
         <div class="row justify-content-center align-items-center h-100">
             <div class="col-12 col-sm-8 col-md-6 col-lg-4">
                 <div class="profile-card py-3 card text-center">
-
+                    <h3 class="card-title">Producto a Recoger</h3>
                     <div class="card-body py-4">
-                        <h2 class="text-dark h5 font-weight-bold mt-4 mb-1">
-                            {{ currentProduct.descripcion }}                            
-                        </h2>
                         <div class="d-flex px-1 w-100 align-items-center text-left">
                             <div class="w-100">
                                 <label class="mb-1 font-weight-light h5 text-muted small text-uppercase">Posicion:</label>
@@ -44,7 +41,7 @@
         </div>
     </div>
 
-    <div class="container h-100" *ngIf="testingPickedProduct">
+    <div class="container h-100 mt-5" *ngIf="testingPickedProduct">
         <h2 class="text-center">Comprobar producto</h2>
         <div class="row justify-content-center align-items-center h-100">
             <div class="col-12 col-sm-8 col-md-6 col-lg-4">
@@ -65,7 +62,7 @@
             </div>
 
             <div class="d-flex justify-content-center" *ngIf="!waitingForPrediction">
-                <p class="h3 text-danger" *ngIf="notCorrectlyChosen">Selecciona otro producto</p>
+                <p class="h4 text-danger" *ngIf="notCorrectlyChosen">Producto no reconocido. Por favor vuelve a tomar una foto.</p>
             </div>
         </div>
     </div>
@@ -76,7 +73,7 @@
                 <p class="h3 text-success text-center" *ngIf="correctlyChosen">Correcto!</p>
                 <button class="col btn btn-success btn-lg" (click)="nextProduct(orderID)">Siguiente producto</button>
                 <h4 class="text-center m-2">Desea cambiar el medio?</h4>
-                <input class="col m-1" type="text" placeholder="Igrese ID del medio" #mediumID>
+                <input class="col m-1" type="text" placeholder="Ingrese ID del medio" #mediumID>
                 <button class="col btn btn-primary m-1 btn-lg" (click)="registerMedium(orderID, mediumID.value)">Cambiar</button>
             </div>
         </div>

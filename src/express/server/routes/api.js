@@ -52,7 +52,7 @@ module.exports = (app) => {
 
   app.post('/api/take_product', (req, res) => {
     var id_pedido = Number(req.body.id_pedido);
-    var referencia = req.body.ref;
+    var referencia = req.body.referencia;
     picking_file.PickingFile.findOne({'pedido': id_pedido}, function(err, order){
       picking_file.PickingFile.findOneAndUpdate(
         { "pedido": id_pedido, "productos.referencia" : referencia}, 
@@ -61,7 +61,8 @@ module.exports = (app) => {
             "productos.$.ejecutado_picking" : true, 
             "productos.$.medio": order.medio_actual
           }
-        }, function(err){
+        },
+        function(err, doc){
           if (err) throw err;
         });
         res.sendStatus(200);
@@ -70,8 +71,9 @@ module.exports = (app) => {
 
   app.get('/api/orders/:id', (req, res) => {
     orders = []
-    picking_file.PickingFile.find({usuario: req.params.id}).exec(function (err, found_orders) {
-      found_orders.map(order => {        
+    picking_file.PickingFile.find({usuario: req.params.id, 'productos.ejecutado_picking': false})
+    .exec(function (err, found_orders) {
+      found_orders.map(order => {
         orders.push({id_pedido: order["pedido"], medio: order["medio_actual"] || ""});
       });
       res.json(orders);
@@ -87,8 +89,12 @@ module.exports = (app) => {
       {$limit: 1}
     ])
     .then(function (query_result){
-      if (query_result.length==0) return res.end();
-      var product = {};
+      if (query_result.length==0) {
+        res.json({status: 'EMPTY'});
+        res.end();
+        return;
+      }
+      var product = {status: 'NOT EMPTY'};
       product.referencia = query_result[0].productos.referencia;
       product.posicion = query_result[0].productos.posicion;
       product.cantidad = query_result[0].productos.cantidad;

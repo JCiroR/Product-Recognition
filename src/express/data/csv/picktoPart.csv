@@ -1,13 +1,11 @@
 Tipo de picking;Pedido;Posicion pedido;Referencia;Modulo;Posicion;Cantidad;Usuario;Ola;Ejecutado picking;Cantidad ejecutada;Medio;Ejecutado Reabastecimiento;Hora seleccion pedido;Hora lectura medio;Hora seleccion referencia;Hora confirmo la cantidad referencia
-PP;1001;NA;310424359;D;D - C2 - N4;1;2;;;;;;;;;
+PP;1001;NA;127082707;A;A - C1 - N2;1;2;;;;;;;;;
 PP;1001;NA;127082744;G;G - C3 - N5;10;2;;;;;;;;;
 PP;1001;NA;310094039;C;C - C8 - N3;6;2;;;;;;;;;
-PP;1002;NA;127082756;F;F - C4 - N1;9;1;;;;;;;;;
-PP;1002;NA;127082775;G;G - C3 - N2;5;1;;;;;;;;;
-PP;1002;NA;127082746;E;E - C2 - N1;4;1;;;;;;;;;
-PP;1002;NA;310014013;C;C - C5 - N1;7;1;;;;;;;;;
-PP;1003;NA;310094035;C;C - C8 - N1;5;1;;;;;;;;;
-PP;1003;NA;304600008;A;A - C8 - N5;4;1;;;;;;;;;
+PP;1002;NA;127082715;B;B - C1 - N2;9;1;;;;;;;;;
+PP;1002;NA;127082718;F;F - C3 - N3;5;1;;;;;;;;;
+PP;1003;NA;127082719;E;E - C7 - N4;5;1;;;;;;;;;
+PP;1003;NA;127082721;B;B - C7 - N2;4;1;;;;;;;;;
 PP;1003;NA;333390428;B;B - C7 - N8;5;1;;;;;;;;;
 PP;1003;NA;310081218;C;C - C3 - N3;10;1;;;;;;;;;
 PP;1003;NA;303540064;B;B - C1 - N5;9;1;;;;;;;;;

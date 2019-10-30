@@ -1,15 +1,15 @@
 <div class="text-center">
-  <h1>Usuario</h1>
+  <h1 class="mt-4">Identificación de Usuario</h1>
 </div>
 
 <div class="h-100" id="demopurpose">
   <div class="container h-100">
-    <div class="row justify-content-center align-items-center h-100">
-      <div class="col-12 col-sm-8 col-md-6 col-lg-4">
-
-        <input class="col" type="text" placeholder="Igrese su ID" #userID (focusout) ="focusoutHandler(userID.value)">
+    <div class="justify-content-center align-items-center h-100">
+      <div class="row mt-4">
+        <input class="form-control" type="text" placeholder="Ingrese su número de usuario" #userID (focusout) ="focusoutHandler(userID.value)">
+      </div>
+      <div class="row mt-4">
         <button type="button" class="col btn-primary btn-lg" value="Ver pedidos" [routerLink]="['/orders', userID.value]">Ver pedidos</button>
-
       </div>
     </div>
   </div>

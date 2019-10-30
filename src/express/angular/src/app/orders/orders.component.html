@@ -10,7 +10,7 @@
         <div *ngFor="let order of orders; let idx = index">
           <button type="button" class="col btn btn-outline-primary btn-lg m-1" (click)="onShowMediumInput(idx)">Pedido: {{ order['id_pedido'] }}</button>
           <div [class.hidden]="notShowMediumInputs[idx]">
-            <input class="col" id="{{ 'medium-input-' + idx }}" type="text" placeholder="Igrese ID del medio"
+            <input class="col" id="{{ 'medium-input-' + idx }}" type="text" placeholder="Ingrese ID del medio"
                     #mediumID (focusout)="obtainMediumID(idx, mediumID.value)" value="{{ mediumIDs[idx] }}">
             <button class="col btn btn-primary"
                     [routerLink]="((mediumID.value == null) || (mediumID.value == undefined) || (mediumID.value == '')) ? [] : 

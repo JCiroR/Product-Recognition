@@ -27,14 +27,17 @@ export class ProductPickerService {
       })).toPromise();
   }
 
-  sendImage(image) {
+  sendImage(image, ref) {
+    image.append("ref", ref);
     var res = this.http.post(baseUrl + '/validate_photo', image)
         .pipe(map(data => data.json())).toPromise();
     return res;
   }
 
-  takeProduct(product) {
-    return this.http.post(baseUrl + '/take_product', product)
+  takeProduct(product, order) {
+    var body = product;
+    body.id_pedido = order;
+    return this.http.post(baseUrl + '/take_product', body)
         .pipe(map(response => {
           return response;
         })).toPromise();
