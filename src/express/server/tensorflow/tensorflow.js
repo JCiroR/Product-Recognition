@@ -5,73 +5,72 @@ var ETL = require('node-etl');
 const jsonString = fs.readFileSync('./src/express/data/csv/id_to_ref.json');
 const data = JSON.parse(jsonString);
 
-function validate (src, ref, res){
-    loadModal.loadMobilenet().then(pretrainedModel => {
-        loadModal.loadImageCustom(src).then(img => {
+var CNN; 
+async function loadModel () {
+    loadModal.loadMobilenet().then(model => CNN = model);
+}
 
-            const processedImage = loadModal.loadAndProcessImage(img);
-            const prediction = pretrainedModel.predict(processedImage);
-            var prediction_probs = prediction.dataSync();
-            var treshold = prediction.dataSync().sort().reverse()[4];
+function validate (src, ref, res) {
+    loadModal.loadImageCustom(src).then(img => {
+
+        const processedImage = loadModal.loadAndProcessImage(img);
+        const prediction = CNN.predict(processedImage);
+        var prediction_probs = prediction.dataSync();
+        var treshold = prediction.dataSync().sort().reverse()[4];
+        
+        var valid_prediction = prediction_probs.map(x => x>=treshold);
+
+        var subfolder = './src/express/data/processed/train/';
+        fs.readdir(subfolder, (err, products) => {
+            var ref_id = products.indexOf(ref);
+            var is_valid = valid_prediction[ref_id]==1;
+            if (is_valid) res.json({status: 'MATCH'});
+            else res.json({status: "ERROR"});
+            res.end();
             
-            var valid_prediction = prediction_probs.map(x => x>=treshold);
-
-            var subfolder = './src/express/data/processed/train/';
-            fs.readdir(subfolder, (err, products) => {
-                var ref_id = products.indexOf(ref);
-                var is_valid = valid_prediction[ref_id]==1;
-                if (is_valid) res.json({status: 'MATCH'});
-                else res.json({status: "ERROR"});
-                res.end();
-                
-            })
-        }).catch(err => res.end(err));;
-
+        })
     }).catch(err => res.end(err));
 }
 
-module.exports = {
+function classify (src, res) {
+    loadModal.loadImageCustom(src).then(img => {
+        const processedImage = loadModal.loadAndProcessImage(img);
+        const prediction = CNN.predict(processedImage);
+        var predicted_idx = prediction.argMax(1).dataSync()[0];
 
-    init: function (src, res){
-        loadModal.loadMobilenet().then(pretrainedModel => {
-            loadModal.loadImageCustom(src).then(img => {
-                const processedImage = loadModal.loadAndProcessImage(img);
-                const prediction = pretrainedModel.predict(processedImage);
-                var predicted_idx = prediction.argMax(1).dataSync()[0];
+        csvToJson('./src/express/data/csv/Maestro de Inventario 2019-2.csv' );
 
-                csvToJson('./src/express/data/csv/Maestro de Inventario 2019-2.csv' );
+        var pred_info = null;
+        for (key in data){
+            if(data[key]["prediction"]==predicted_idx){
+                pred_info = data[key]["ref"];
+            }
+        }
 
-                var pred_info = null;
-                for (key in data){
-                    if(data[key]["prediction"]==predicted_idx){
-                        pred_info = data[key]["ref"];
+        var subfolder = './src/express/data/processed/train/' + pred_info.referencia + '/';
+        fs.readdir(subfolder, (err, img_files) => {
+            if(err){ console.log(err); return}
+            var response_img = img_files[3]; // seleccionar una "aleatoriamente"
+            image2base64(subfolder + response_img) // you can also to use url
+                .then(
+                    (response) => {
+                        pred_info['imagen'] = "data:image/jpeg;base64," + response;
+                        res.setHeader('Content-Type', 'application/json');
+                        res.end(JSON.stringify(pred_info));
                     }
-                }
+                )
+                .catch(
+                    (error) => {
+                        console.log(error); //Exepection error....
+                    }
+                );
+        });
+    });
+}
 
-
-                var subfolder = './src/express/data/processed/train/' + pred_info.referencia + '/';
-                fs.readdir(subfolder, (err, img_files) => {
-                    if(err){ console.log(err); return}
-                    var response_img = img_files[3]; // seleccionar una "aleatoriamente"
-                    image2base64(subfolder + response_img) // you can also to use url
-                        .then(
-                            (response) => {
-                                pred_info['imagen'] = "data:image/jpeg;base64," + response;
-                                res.setHeader('Content-Type', 'application/json');
-                                res.end(JSON.stringify(pred_info));
-                            }
-                        )
-                        .catch(
-                            (error) => {
-                                console.log(error); //Exepection error....
-                            }
-                        );
-                });
-            });
-
-        }).catch(err => res.end(err));
-    },
-
+module.exports = {
+    classify: classify,
+    loadModel: loadModel,
     validate: validate
 }
 

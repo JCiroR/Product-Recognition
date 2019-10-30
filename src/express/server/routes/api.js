@@ -28,6 +28,7 @@ fs.readFile('./src/express/data/csv/picktoPart.csv', function(err, data) {
   load_file.load_file(data);
 });
 
+tensorflow.loadModel();
 var bodyParser = require('body-parser');
 
 module.exports = (app) => {
@@ -35,7 +36,7 @@ module.exports = (app) => {
 
 	app.post('/api/image', upload.single("image"), (req, res) => {
     const tempPath = req.file.path;
-    tensorflow.init(tempPath, res);
+    tensorflow.classify(tempPath, res);
   });
 
   app.post('/api/validate_photo/', upload.single("image"), (req, res) => {
