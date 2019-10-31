@@ -23,7 +23,7 @@ const appRoutes: Routes = [
     { path: 'product', component: ProductComponent },
     { path: 'user', component: UserIdentifierComponent },
     { path: "orders/:user_id", component: OrdersComponent },
-    { path: "picker/:order_id/:medium_id", component: ProductPickerComponent }
+    { path: "picker/:user_id/:order_id/:medium_id", component: ProductPickerComponent }
   ];
 
 @NgModule({
