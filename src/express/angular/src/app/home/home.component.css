@@ -335,7 +335,9 @@ html {
     line-height: 66px;
     color: #c5a47e;
     margin-bottom: 10px;
+    margin-left: 10px;
   }
+
   .info-icon .description {
     margin-top: 15px;
     color: #777777;
@@ -966,7 +968,7 @@ html {
   }
   .section .title-area {
     max-width: 760px;
-    margin: 0 auto 70px;
+    margin: auto auto auto;
     display: block;
     padding: 0 15px;
     text-align: center;
@@ -1219,7 +1221,7 @@ html {
   }
   .section-pricing .container > .content {
     margin-top: 115px;
-    position: relative;
+    position: center;
     z-index: 3;
   }
   

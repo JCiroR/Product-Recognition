@@ -1,24 +1,35 @@
-<div class="text-center">
-  <h1>Cargador de Productos</h1>
-</div>
-<div class="h-100" id="demopurpose">
-  <div class="container h-100">
-      <div class="row justify-content-center align-items-center h-100">
-          <div class="col-12 col-sm-8 col-md-6 col-lg-4">
-              <div>              
-                <input type="file" class="col btn-lg" (change)="onImageSelected($event)">
-              </div>
-              <div>
-                <button type="button" class="col btn-primary btn-lg" (click)="onUpload()">Cargar</button>
-              </div>
+<div class="casa">
+  <div class="container p-5">
+    <!-- For demo purpose -->
+    <div class="row mb-5 text-center text-white">
+      <div class="col-lg-10 mx-auto">
+        <h1 class="display-4">Cargador de Productos </h1>
+      </div>
+    </div>
+    <!-- End -->
+
+
+    <div class="row">
+      <div class="col-lg-5 mx-auto">
+        <div class="p-5 bg-white shadow rounded-lg"><img src="https://res.cloudinary.com/mhmd/image/upload/v1557366994/img_epm3iz.png" alt="" width="200" class="d-block mx-auto mb-4 rounded-pill">
+
+          <!-- Default bootstrap file upload-->
+
+          <h6 class="text-center mb-4 text-muted">
+            Subir o Tomar fotografia para verificar el producto
+          </h6>
+
+          <div class="custom-file overflow-hidden rounded-pill mb-5">
+            <input id="customFile" type="file" class="custom-file-input rounded-pill" (change)="onImageSelected($event)" required>
+            <label for="customFile" class="custom-file-label rounded-pill">Seleccionar archivo</label>
+          </div>
+          <div>
+            <button type="button" class="col btn-primary btn-lg" (click)="onUpload()">Cargar</button>
+          </div>
+          <!-- End -->
+
         </div>
       </div>
+    </div>
   </div>
-</div>
 <br>
-
-<div class="d-flex justify-content-center" *ngIf="waitingForPrediction">
-  <div class="row spinner-border text-primary m-5" style="width: 14rem; height: 14rem;" role="status">
-    <span class="sr-only">Loading...</span>
-  </div>
-</div>
